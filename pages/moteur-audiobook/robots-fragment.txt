@@ -1,0 +1,4 @@
+# Fragment à ajouter au robots.txt racine du site (audiobooklab.fr/robots.txt) :
+# User-agent: *
+# Allow: /blog-audiobook/
+# Sitemap: https://audiobooklab.fr/blog-audiobook/sitemap.xml
