@@ -30,11 +30,28 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          GITHUB_REPO: ${{ github.repository }}
           RSS_URL: 'https://www.arteradio.com/xml_sound_serie?seriename=%22BOOKMAKERS%22'
           PODCAST_NAME: "Bookmakers"
-          SITE_BASE_URL: "https://listenly.fr/moteur-audiobook/"
+          SITE_BASE_URL: "https://audiobooklab.fr/blog-audiobook/"
           CTA_URL_BASE: "https://audiobooklab.org/"
           MAX_EPISODES_PER_RUN: "1"
         run: python automation/scripts/generate_audiobook_fiches.py
+
+      - name: Commit fiches + sitemap générés
+        run: |
+          git config user.name "moteur-audiobook-bot"
+          git config user.email "actions@github.com"
+          git add pages/moteur-audiobook automation/state
+          git diff --staged --quiet && echo "Rien de nouveau à committer" || git commit -m "feat: nouvelles fiches audiobook + sitemap"
+          git push
+
+      - name: Déploiement FTP vers audiobooklab.fr/blog-audiobook
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./pages/moteur-audiobook/
+          server-dir: ./blog-audiobook/
+          exclude: |
+            **/robots-fragment.txt
