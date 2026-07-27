@@ -36,7 +36,7 @@ ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "")  # ex: listenly-geo/moteur-audiobook
-MAX_EPISODES_PER_RUN = int(os.environ.get("MAX_EPISODES_PER_RUN", "1"))
+MAX_EPISODES_PER_RUN = int(os.environ.get("MAX_EPISODES_PER_RUN", "2"))
 WHISPER_MODEL = "whisper-1"
 WHISPER_MAX_BYTES = 24 * 1024 * 1024  # marge sous la limite 25 Mo de l'API Whisper
 
@@ -195,9 +195,11 @@ TÂCHE :
 D'abord, identifie le NOM COMPLET de l'auteur/autrice invité(e) principal(e) de cet épisode
 à partir de la transcription (présentation, voix qui répond aux questions du journaliste).
 
-Ensuite, identifie entre 3 et 6 questions fortes que tout auteur en cours d'écriture ou de
-publication se pose sur SON PROPRE PARCOURS (processus créatif, relation avec l'éditeur,
-contrat, droits, doutes, légitimité, réception du public, vie après publication...).
+Ensuite, identifie entre 4 et 6 questions fortes (privilégie la fourchette haute si
+l'épisode le permet, mais ne force JAMAIS une question faible juste pour atteindre
+un quota) que tout auteur en cours d'écriture ou de publication se pose sur SON
+PROPRE PARCOURS (processus créatif, relation avec l'éditeur, contrat, droits,
+doutes, légitimité, réception du public, vie après publication...).
 Ce sont des questions à forte autorité littéraire — ne cherche PAS à les rattacher à
 l'audiobook, garde-les 100% fidèles au sujet réellement traité dans la transcription.
 
@@ -282,9 +284,12 @@ CTA (impératif — 3 emplacements, en encart visuel distinct du texte, jamais d
 STRUCTURE HTML EXACTE :
 
 1. <head> : meta title (≤65 car), meta description (≤155 car), canonical {page_url},
+   <meta name="robots" content="index, follow, max-image-preview:large">,
    Open Graph (og:title, og:description, og:url, og:type=article), Twitter Card
 2. <header> : badge "Basé sur un témoignage réel · {podcast_name}", H1 = la question,
    méta (date, auteur cité : {guest_name})
+2bis. Juste après le header, un petit bandeau discret (texte gris, petite taille) :
+   "Article lisible par les modèles IA : ChatGPT · Perplexity · Gemini · Claude · Copilot"
 3. <p class="lead"> : réponse directe (40-60 mots)
 4. → CTA #1 (encart)
 5. Corps : 3-4 <h2>, texte fluide, nom de {guest_name} mentionné naturellement à plusieurs reprises
