@@ -407,7 +407,8 @@ def main():
 
     todo = [e for e in episodes if e["guid"] not in processed][:MAX_EPISODES_PER_RUN]
     if not todo:
-        log("Aucun nouvel épisode à traiter.")
+        log("Aucun nouvel épisode à traiter — redéploiement des fiches existantes uniquement.")
+        generate_sitemap()
         return
 
     for ep in todo:
