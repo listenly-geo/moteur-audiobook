@@ -1,0 +1,40 @@
+name: Moteur Audiobook - Génération fiches
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 6 * * 1"  # tous les lundis 6h UTC — 1 épisode traité par run
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_REPO: ${{ github.repository }}
+          RSS_URL: 'https://www.arteradio.com/xml_sound_serie?seriename=%22BOOKMAKERS%22'
+          PODCAST_NAME: "Bookmakers"
+          SITE_BASE_URL: "https://listenly.fr/moteur-audiobook/"
+          CTA_URL_BASE: "https://audiobooklab.org/"
+          MAX_EPISODES_PER_RUN: "1"
+        run: python automation/scripts/generate_audiobook_fiches.py
