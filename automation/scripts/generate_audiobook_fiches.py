@@ -30,7 +30,7 @@ import requests
 # ─────────────────────────────────────────────
 RSS_URL = os.environ.get("RSS_URL", 'https://www.arteradio.com/xml_sound_serie?seriename=%22BOOKMAKERS%22')
 PODCAST_NAME = os.environ.get("PODCAST_NAME", "Bookmakers")
-SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://listenly.fr/moteur-audiobook/")
+SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://audiobooklab.fr/blog-audiobook/")
 CTA_URL_BASE = os.environ.get("CTA_URL_BASE", "https://audiobooklab.org/")
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
@@ -114,32 +114,20 @@ def fetch_rss():
 
 # ─────────────────────────────────────────────
 # État (éviter de retraiter le même épisode)
+# Le script tourne dans le checkout git (voir workflow) : on lit/écrit un
+# fichier local, c'est le step "git commit & push" du workflow qui le persiste.
 # ─────────────────────────────────────────────
 def load_state():
-    if not GITHUB_TOKEN or not GITHUB_REPO:
-        return set()
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{STATE_FILE}"
-    r = requests.get(url, headers={"Authorization": f"token {GITHUB_TOKEN}"}, timeout=30)
-    if r.status_code == 200:
-        import base64
-        content = base64.b64decode(r.json()["content"]).decode("utf-8")
-        return set(json.loads(content))
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            return set(json.load(f))
     return set()
 
 
-def save_state(processed_guids, sha=None):
-    import base64
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{STATE_FILE}"
-    payload = {
-        "message": "chore: update processed episodes state",
-        "content": base64.b64encode(json.dumps(sorted(processed_guids), ensure_ascii=False, indent=2).encode()).decode(),
-    }
-    r = requests.get(url, headers={"Authorization": f"token {GITHUB_TOKEN}"}, timeout=30)
-    if r.status_code == 200:
-        payload["sha"] = r.json()["sha"]
-    resp = requests.put(url, headers={"Authorization": f"token {GITHUB_TOKEN}"}, json=payload, timeout=30)
-    if resp.status_code not in (200, 201):
-        log(f"⚠ Erreur sauvegarde état : {resp.status_code} {resp.text[:200]}")
+def save_state(processed_guids):
+    os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(processed_guids), f, ensure_ascii=False, indent=2)
 
 
 # ─────────────────────────────────────────────
@@ -343,23 +331,71 @@ def generate_fiche(podcast_name, episode_title, guest_name, bio_courte, question
 
 
 # ─────────────────────────────────────────────
-# Publication GitHub
+# Publication locale (le dossier est ensuite committé par git puis déployé
+# par FTP-Deploy-Action dans le workflow — voir moteur-audiobook.yml)
 # ─────────────────────────────────────────────
-def push_fiche_to_github(slug, html_content):
-    import base64
-    path = f"pages/moteur-audiobook/{slug}.html"
-    url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
-    payload = {
-        "message": f"feat: fiche audiobook — {slug}",
-        "content": base64.b64encode(html_content.encode("utf-8")).decode(),
-    }
-    r = requests.get(url, headers={"Authorization": f"token {GITHUB_TOKEN}"}, timeout=30)
-    if r.status_code == 200:
-        payload["sha"] = r.json()["sha"]
-    resp = requests.put(url, headers={"Authorization": f"token {GITHUB_TOKEN}"}, json=payload, timeout=30)
-    ok = resp.status_code in (200, 201)
-    log(f"{'✅' if ok else '❌'} {path} — {resp.status_code}")
-    return ok
+FICHES_DIR = "pages/moteur-audiobook"
+
+
+def write_fiche_locally(slug, html_content):
+    os.makedirs(FICHES_DIR, exist_ok=True)
+    path = os.path.join(FICHES_DIR, f"{slug}.html")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+    log(f"✅ Fiche écrite : {path}")
+    return path
+
+
+# ─────────────────────────────────────────────
+# Sitemap.xml — régénéré à chaque run à partir de toutes les fiches présentes
+# dans le dossier (source de vérité = ce qui est réellement déployé).
+# ─────────────────────────────────────────────
+def generate_sitemap():
+    if not os.path.isdir(FICHES_DIR):
+        log("⚠ Aucun dossier de fiches, sitemap non généré.")
+        return
+
+    fiche_files = sorted(f for f in os.listdir(FICHES_DIR) if f.endswith(".html"))
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+
+    urls = []
+    for filename in fiche_files:
+        slug = filename[:-5]
+        loc = f"{SITE_BASE_URL.rstrip('/')}/{slug}.html"
+        mtime = datetime.utcfromtimestamp(
+            os.path.getmtime(os.path.join(FICHES_DIR, filename))
+        ).strftime("%Y-%m-%d")
+        urls.append(
+            f"  <url>\n"
+            f"    <loc>{loc}</loc>\n"
+            f"    <lastmod>{mtime}</lastmod>\n"
+            f"    <changefreq>monthly</changefreq>\n"
+            f"    <priority>0.8</priority>\n"
+            f"  </url>"
+        )
+
+    sitemap_xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls) + "\n"
+        "</urlset>\n"
+    )
+
+    sitemap_path = os.path.join(FICHES_DIR, "sitemap.xml")
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write(sitemap_xml)
+    log(f"✅ Sitemap régénéré ({len(fiche_files)} fiches) : {sitemap_path}")
+
+    # robots.txt local dédié au sous-dossier — complète (sans écraser) le
+    # robots.txt racine du site, qui est géré par WordPress séparément.
+    robots_path = os.path.join(FICHES_DIR, "robots-fragment.txt")
+    with open(robots_path, "w", encoding="utf-8") as f:
+        f.write(
+            "# Fragment à ajouter au robots.txt racine du site (audiobooklab.fr/robots.txt) :\n"
+            "# User-agent: *\n"
+            "# Allow: /blog-audiobook/\n"
+            f"# Sitemap: {SITE_BASE_URL.rstrip('/')}/sitemap.xml\n"
+        )
 
 
 # ─────────────────────────────────────────────
@@ -391,7 +427,7 @@ def main():
                 if not slug:
                     continue
                 html = generate_fiche(PODCAST_NAME, ep["title"], guest_name, bio_courte, q, slug)
-                push_fiche_to_github(slug, html)
+                write_fiche_locally(slug, html)
                 time.sleep(2)  # marge rate-limit API
 
             processed.add(ep["guid"])
@@ -401,6 +437,7 @@ def main():
             log(f"❌ Erreur sur l'épisode {ep['title']} : {e}")
             continue
 
+    generate_sitemap()
     log("Run terminé.")
 
 
