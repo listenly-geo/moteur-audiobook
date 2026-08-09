@@ -35,7 +35,7 @@ jobs:
           SITE_BASE_URL: "https://audiobooklab.fr/blog-audiobook/"
           CTA_URL_BASE: "https://audiobooklab.org/"
           MAX_EPISODES_PER_RUN: "2"
-     run: python automation/scripts/generate_audiobook_fiches.py
+        run: python automation/scripts/generate_audiobook_fiches.py
 
       - name: Générer l'index des fiches
         run: python3 automation/scripts/generate_fiches_index.py
