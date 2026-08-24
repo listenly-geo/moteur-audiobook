@@ -7,6 +7,13 @@
     "url": "https://audiobooklab.fr/blog-audiobook/quand-peut-on-se-considerer-auteur-apres-combien-de-livres-publies-ou-de-succes.html"
   },
   {
+    "slug": "faut-il-quitter-son-editeur-quand-celui-ci-est-rachete-par-un-groupe-aux-orienta",
+    "headline": "Faut-il quitter son éditeur quand celui-ci est racheté par un groupe aux orientations idéologiques opposées aux siennes ?",
+    "date": "2025-07-15",
+    "description": "Quand Grasset a été racheté par le groupe Bolloré, Paul B. Preciado a choisi de partir. Son témoignage éclaire une question que tout auteur peut un jour se poser.",
+    "url": "https://audiobooklab.fr/blog-audiobook/faut-il-quitter-son-editeur-quand-celui-ci-est-rachete-par-un-groupe-aux-orienta.html"
+  },
+  {
     "slug": "faut-il-inventer-des-concepts-nouveaux-et-les-signer-de-son-nom-pour-exister-com",
     "headline": "Faut-il inventer des concepts nouveaux et les signer de son nom pour exister comme penseur ?",
     "date": "2025-07-15",
@@ -56,6 +63,13 @@
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html"
   },
   {
+    "slug": "quelles-avances-reelles-peut-on-esperer-dun-editeur-francais-selon-la-notoriete",
+    "headline": "Quelles avances réelles peut-on espérer d'un éditeur français selon la notoriété de ses livres ?",
+    "date": "2025-07-14",
+    "description": "De 800 € à 20 000 € : Paul B. Preciado détaille avec une transparence rare l'évolution de ses avances chez les éditeurs français et étrangers.",
+    "url": "https://audiobooklab.fr/blog-audiobook/quelles-avances-reelles-peut-on-esperer-dun-editeur-francais-selon-la-notoriete.html"
+  },
+  {
     "slug": "quelles-avances-a-la-signature-peut-on-esperer-en-debut-de-carriere-litteraire-p",
     "headline": "Quelles avances à la signature peut-on espérer en début de carrière littéraire philosophique ?",
     "date": "2025-07-14",
@@ -91,11 +105,25 @@
     "url": "https://audiobooklab.fr/blog-audiobook/que-faire-quand-un-manuscrit-avance-ne-vous-satisfait-plus-et-que-dautres-projet.html"
   },
   {
+    "slug": "que-faire-quand-son-editeur-dit-que-votre-livre-hybride-aurait-du-etre-deux-livr",
+    "headline": "Que faire quand son éditeur dit que votre livre hybride aurait dû être deux livres séparés pour toucher plus de lecteurs ?",
+    "date": "2025-07-14",
+    "description": "Que faire quand son éditeur dit que votre livre hybride aurait dû être deux livres ? L'expérience de Paul B. Preciado avec Testo Junkie.",
+    "url": "https://audiobooklab.fr/blog-audiobook/que-faire-quand-son-editeur-dit-que-votre-livre-hybride-aurait-du-etre-deux-livr.html"
+  },
+  {
     "slug": "que-faire-quand-on-perd-ses-manuscrits-ou-originaux-avant-la-fin-dun-projet",
     "headline": "Que faire quand on perd ses manuscrits ou originaux avant la fin d'un projet ?",
     "date": "2025-07-14",
     "description": "Voler ses originaux, perdre un manuscrit en cours : comment réagir ? Le témoignage de Winshluss (Vincent Paronno) après le vol de ses planches dans un train.",
     "url": "https://listenly.fr/moteur-audiobook/que-faire-quand-on-perd-ses-manuscrits-ou-originaux-avant-la-fin-dun-projet.html"
+  },
+  {
+    "slug": "pourquoi-retarder-la-retraduction-de-son-propre-livre-dans-une-autre-langue-plut",
+    "headline": "Pourquoi retarder la retraduction de son propre livre dans une autre langue plutôt que de le faire soi-même ?",
+    "date": "2025-07-14",
+    "description": "Paul B. Preciado a attendu 25 ans avant de laisser retraduire son Manifeste Contre-sexuel. La raison : la peur de réécrire totalement le texte s'il y touchait lui-même.",
+    "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-retarder-la-retraduction-de-son-propre-livre-dans-une-autre-langue-plut.html"
   },
   {
     "slug": "pourquoi-ecrire-au-present-de-lindicatif-et-en-quoi-ca-change-tout-pour-le-lecte",
@@ -161,6 +189,13 @@
     "url": "https://audiobooklab.fr/blog-audiobook/est-ce-quun-premier-roman-peut-trop-vouloir-en-dire-et-comment-reconnaitre-quon.html"
   },
   {
+    "slug": "est-ce-quun-agent-litteraire-change-vraiment-les-conditions-financieres-dun-aute",
+    "headline": "Est-ce qu'un agent littéraire change vraiment les conditions financières d'un auteur ?",
+    "date": "2025-07-14",
+    "description": "Paul B. Preciado témoigne : son agent américain lui a permis de doubler son avance au Seuil. Ce que ça change concrètement pour un auteur.",
+    "url": "https://audiobooklab.fr/blog-audiobook/est-ce-quun-agent-litteraire-change-vraiment-les-conditions-financieres-dun-aute.html"
+  },
+  {
     "slug": "est-ce-quon-peut-vraiment-vivre-de-ses-livres-de-bd-ou-faut-il-se-diversifier",
     "headline": "Est-ce qu'on peut vraiment vivre de ses livres de BD ou faut-il se diversifier ?",
     "date": "2025-07-14",
@@ -173,6 +208,13 @@
     "date": "2025-07-14",
     "description": "Dominique Manotti n'a jamais vécu de ses seuls droits d'auteur. Son témoignage éclaire la réalité économique des auteurs de roman policier en France.",
     "url": "https://audiobooklab.fr/blog-audiobook/est-ce-quon-peut-vivre-de-ses-droits-dauteur-quand-on-ecrit-des-romans-policiers.html"
+  },
+  {
+    "slug": "ecrire-dans-plusieurs-langues-simultanement-atout-ou-obstacle-pour-la-coherence",
+    "headline": "Écrire dans plusieurs langues simultanément : atout ou obstacle pour la cohérence d'un livre ?",
+    "date": "2025-07-14",
+    "description": "Paul B. Preciado écrit en espagnol, français et anglais en même temps. Comment cette pratique influence-t-elle la cohérence et la profondeur d'un livre ?",
+    "url": "https://audiobooklab.fr/blog-audiobook/ecrire-dans-plusieurs-langues-simultanement-atout-ou-obstacle-pour-la-coherence.html"
   },
   {
     "slug": "comment-un-refus-dediteur-peut-il-orienter-toute-une-trajectoire-litteraire",
@@ -189,11 +231,25 @@
     "url": "https://audiobooklab.fr/blog-audiobook/comment-trouver-un-editeur-qui-correspond-vraiment-a-ce-quon-ecrit.html"
   },
   {
+    "slug": "comment-trouver-son-premier-editeur-quand-on-ecrit-un-texte-hybride-et-inclassab",
+    "headline": "Comment trouver son premier éditeur quand on écrit un texte hybride et inclassable ?",
+    "date": "2025-07-14",
+    "description": "Comment Paul B. Preciado a publié son premier livre hybride ? Une rencontre, un extrait envoyé, une réponse immédiate. Le récit d'un premier accord éditorial hors norme.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-trouver-son-premier-editeur-quand-on-ecrit-un-texte-hybride-et-inclassab.html"
+  },
+  {
     "slug": "comment-trouver-le-mot-ou-concept-central-de-son-uvre-sans-tomber-dans-le-piege",
     "headline": "Comment trouver le mot ou concept central de son œuvre sans tomber dans le piège de la surexposition ?",
     "date": "2025-07-14",
     "description": "Comment un auteur gère-t-il le mot qui traverse toute son œuvre ? Baptiste Morizot témoigne du destin inattendu du mot 'vivant' — et de la nausée qu'il peut provoquer.",
     "url": "https://audiobooklab.fr/blog-audiobook/comment-trouver-le-mot-ou-concept-central-de-son-uvre-sans-tomber-dans-le-piege.html"
+  },
+  {
+    "slug": "comment-travailler-le-style-et-la-fluidite-dun-texte-philosophique-dense-sans-le",
+    "headline": "Comment travailler le style et la fluidité d'un texte philosophique dense sans le dénaturer ?",
+    "date": "2025-07-14",
+    "description": "Comment rendre un texte philosophique dense agréable à lire sans le trahir ? Paul B. Preciado partage sa vision du rythme et de la fluidité en écriture.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-travailler-le-style-et-la-fluidite-dun-texte-philosophique-dense-sans-le.html"
   },
   {
     "slug": "comment-transformer-une-experience-militante-ou-professionnelle-vecue-en-matiere",
@@ -280,11 +336,25 @@
     "url": "https://audiobooklab.fr/blog-audiobook/comment-preparer-un-entretien-litteraire-en-profondeur-sans-se-noyer-dans-la-doc.html"
   },
   {
+    "slug": "comment-passer-du-milieu-universitaire-a-vivre-uniquement-de-son-ecriture",
+    "headline": "Comment passer du milieu universitaire à vivre uniquement de son écriture ?",
+    "date": "2025-07-14",
+    "description": "Comment quitter un poste universitaire bien payé pour vivre de son écriture ? Le témoignage de Paul B. Preciado, philosophe et auteur espagnol.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-passer-du-milieu-universitaire-a-vivre-uniquement-de-son-ecriture.html"
+  },
+  {
     "slug": "comment-organiser-son-rythme-de-travail-quotidien-quand-on-est-auteur-ou-createu",
     "headline": "Comment organiser son rythme de travail quotidien quand on est auteur ou créateur ?",
     "date": "2025-07-14",
     "description": "Matin à l'écriture, après-midi à la relecture, soir à la lecture : le modèle de Soljenitsyne, transmis par Richard Guettet, change tout pour les créateurs.",
     "url": "https://audiobooklab.fr/blog-audiobook/comment-organiser-son-rythme-de-travail-quotidien-quand-on-est-auteur-ou-createu.html"
+  },
+  {
+    "slug": "comment-obtenir-laccord-dun-proche-pour-le-mettre-en-scene-de-facon-tres-intime",
+    "headline": "Comment obtenir l'accord d'un proche pour le mettre en scène de façon très intime dans son livre ?",
+    "date": "2025-07-14",
+    "description": "Comment exposer l'intimité d'un proche dans un livre sans le trahir ? Paul B. Preciado partage son expérience avec Virginie Despentes lors de l'écriture de Testo Junkie.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-obtenir-laccord-dun-proche-pour-le-mettre-en-scene-de-facon-tres-intime.html"
   },
   {
     "slug": "comment-lutter-contre-ses-propres-angles-morts-culturels-quand-on-anime-une-emis",
@@ -299,6 +369,13 @@
     "date": "2025-07-14",
     "description": "Dominique Manotti explique comment intégrer des scènes de sexe dans un roman noir : elles doivent révéler les personnages et faire avancer l'intrigue.",
     "url": "https://audiobooklab.fr/blog-audiobook/comment-integrer-des-scenes-de-sexe-dans-un-roman-noir-sans-que-ca-soit-gratuit.html"
+  },
+  {
+    "slug": "comment-gerer-un-conflit-editorial-ou-une-censure-dans-une-chronique-de-presse",
+    "headline": "Comment gérer un conflit éditorial ou une censure dans une chronique de presse ?",
+    "date": "2025-07-14",
+    "description": "Comment réagir quand un éditeur censure votre texte ? Paul B. Preciado partage deux expériences vécues à Libération : résistance douce et arbitrage lucide.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-un-conflit-editorial-ou-une-censure-dans-une-chronique-de-presse.html"
   },
   {
     "slug": "comment-gerer-les-deadlines-avec-son-editeur-quand-on-est-perfectionniste-et-quo",
@@ -355,6 +432,13 @@
     "date": "2025-07-14",
     "description": "Comment les auteurs de BD sans texte construisent-ils leurs récits ? Winshluss explique sa méthode : pas de scénario écrit, tout se joue au dessin.",
     "url": "https://audiobooklab.fr/blog-audiobook/comment-ecrire-une-histoire-muette-sans-scenario-ecrit-comment-procedent-les-aut.html"
+  },
+  {
+    "slug": "comment-ecrire-un-premier-livre-entre-essai-universitaire-et-experimentation-for",
+    "headline": "Comment écrire un premier livre entre essai universitaire et expérimentation formelle sans se perdre ?",
+    "date": "2025-07-14",
+    "description": "Comment Paul B. Preciado a écrit son Manifeste Contre-sexuel sans se perdre entre rigueur universitaire et radicalité formelle. Réponse directe et conseils clés.",
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-ecrire-un-premier-livre-entre-essai-universitaire-et-experimentation-for.html"
   },
   {
     "slug": "comment-depasser-la-crise-de-sens-du-philosophe-ou-de-lintellectuel-qui-doute-de",
