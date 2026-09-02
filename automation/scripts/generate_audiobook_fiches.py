@@ -378,6 +378,15 @@ def generate_fiche(podcast_name, episode_title, guest_name, bio_courte, question
     )
     html = call_claude(GENERATION_SYSTEM, user_prompt, max_tokens=6000)
     html = re.sub(r"^```html\s*|\s*```$", "", html.strip())
+
+    # Fix du 02/09/2026 : Claude n'a pas conscience de la date reelle du jour malgre la
+    # consigne "datePublished=aujourd'hui" -- il reprenait souvent la date de diffusion
+    # originale de l'episode (visible dans le prompt), faussant tout l'historique du
+    # dashboard (ex: "derniere generation" affichait juillet 2025 alors que le run venait
+    # de tourner). Injection deterministe (Python) de la vraie date de generation.
+    today_iso = datetime.now().strftime("%Y-%m-%d")
+    html = re.sub(r'("datePublished"\s*:\s*")[^"]*(")', r"\g<1>" + today_iso + r"\g<2>", html)
+
     return html
 
 
