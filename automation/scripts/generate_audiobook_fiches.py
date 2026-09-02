@@ -33,14 +33,35 @@ PODCAST_NAME = os.environ.get("PODCAST_NAME", "Bookmakers")
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://audiobooklab.fr/blog-audiobook/")
 CTA_URL_BASE = os.environ.get("CTA_URL_BASE", "https://audiobooklab.org/")
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
+# Migration cout du 02/09/2026 (alignee sur podcast-btb) : Groq remplace OpenAI Whisper par
+# defaut (~9x moins cher, qualite quasi identique) ; OPENAI_API_KEY reste supporte en fallback
+# via TRANSCRIPTION_PROVIDER=openai. OPENAI_API_KEY n'est donc plus obligatoire (avant : acces
+# direct au dict qui plantait si absente).
+TRANSCRIPTION_PROVIDER = os.environ.get("TRANSCRIPTION_PROVIDER", "groq").strip().lower()
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").strip()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "")  # ex: listenly-geo/moteur-audiobook
 MAX_EPISODES_PER_RUN = int(os.environ.get("MAX_EPISODES_PER_RUN", "2"))
-WHISPER_MODEL = "whisper-1"
-WHISPER_MAX_BYTES = 24 * 1024 * 1024  # marge sous la limite 25 Mo de l'API Whisper
 
-CLAUDE_MODEL = "claude-sonnet-4-6"
+if TRANSCRIPTION_PROVIDER == "groq":
+    TRANSCRIPTION_URL = "https://api.groq.com/openai/v1/audio/transcriptions"
+    TRANSCRIPTION_MODEL = "whisper-large-v3-turbo"
+    TRANSCRIPTION_API_KEY = GROQ_API_KEY
+else:
+    TRANSCRIPTION_URL = "https://api.openai.com/v1/audio/transcriptions"
+    TRANSCRIPTION_MODEL = "whisper-1"
+    TRANSCRIPTION_API_KEY = OPENAI_API_KEY
+
+WHISPER_MAX_BYTES = 24 * 1024 * 1024  # marge sous la limite 25 Mo de l'API Whisper/Groq
+
+# Migration cout du 02/09/2026 : Sonnet -> Haiku, alignee sur podcast-btb (~7x moins cher).
+# ATTENTION (signale a Etienne) : contrairement au moteur B2B (fiches factuelles), ce moteur
+# genere du contenu editorial soigne ("style article premium, pas de fiche SEO robotique") --
+# tache differente, non testee avec Haiku. Recommande de valider la qualite sur quelques
+# fiches reelles avant de faire confiance a l'aveugle (voir echange avec Claude du 02/09/2026).
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 STATE_FILE = "automation/state/processed_episodes.json"
 
 
@@ -158,17 +179,23 @@ def compress_audio(src, size):
 
 
 def transcribe(audio_path):
-    log("Transcription Whisper...")
+    log(f"Transcription {TRANSCRIPTION_PROVIDER}...")
     with open(audio_path, "rb") as f:
         resp = requests.post(
-            "https://api.openai.com/v1/audio/transcriptions",
-            headers={"Authorization": f"Bearer {OPENAI_API_KEY}"},
+            TRANSCRIPTION_URL,
+            headers={
+                "Authorization": f"Bearer {TRANSCRIPTION_API_KEY}",
+                # Fix connu (podcast-btb, 01/09/2026) : Groq/Cloudflare rejette les requetes
+                # sans User-Agent explicite (erreur Cloudflare 1010) -- Python/requests envoie
+                # un User-Agent par defaut generique, souvent bloque.
+                "User-Agent": "Mozilla/5.0 (compatible; ListenlyGEO/1.0; +https://listenly.fr)",
+            },
             files={"file": (os.path.basename(audio_path), f, "audio/mpeg")},
-            data={"model": WHISPER_MODEL, "language": "fr"},
+            data={"model": TRANSCRIPTION_MODEL, "language": "fr"},
             timeout=900,
         )
     if resp.status_code != 200:
-        raise RuntimeError(f"Whisper {resp.status_code}: {resp.text[:300]}")
+        raise RuntimeError(f"Transcription erreur ({TRANSCRIPTION_PROVIDER}) {resp.status_code}: {resp.text[:300]}")
     text = resp.json().get("text", "").strip()
     log(f"Transcription : {len(text)} caractères")
     return text
