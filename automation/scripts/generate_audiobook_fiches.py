@@ -440,6 +440,24 @@ def main():
     todo = [e for e in episodes if e["guid"] not in processed][:MAX_EPISODES_PER_RUN]
     if not todo:
         log("Aucun nouvel épisode à traiter — redéploiement des fiches existantes uniquement.")
+        # Fix du 02/09/2026 : ce cas restait invisible (le run affichait juste succes vert,
+        # comme un run normal) -- personne ne l'a remarque pendant 14 mois. Desormais, une
+        # annotation warning apparait directement sur la page du run GitHub Actions (triangle
+        # jaune), et un resume persistant est ecrit dans l'onglet Summary du run.
+        print(f"::warning::Aucun nouvel episode trouve dans le flux RSS ({len(episodes)} episodes vus, "
+              f"{len(processed)} deja traites). Si ca persiste plusieurs semaines, verifier si le podcast "
+              f"source publie encore de nouveaux episodes, ou si le flux RSS a change de format.")
+        summary_path = os.environ.get("GITHUB_STEP_SUMMARY", "")
+        if summary_path:
+            with open(summary_path, "a", encoding="utf-8") as f:
+                f.write(
+                    f"## ⚠️ Aucun nouvel épisode traité\n\n"
+                    f"- Épisodes vus dans le flux RSS : {len(episodes)}\n"
+                    f"- Déjà traités (historique) : {len(processed)}\n"
+                    f"- Ce run n'a donc rien miné de nouveau — fiches existantes redéployées uniquement.\n\n"
+                    f"Si ce message revient plusieurs semaines de suite, vérifier si le podcast source "
+                    f"publie encore de nouveaux épisodes.\n"
+                )
         generate_sitemap()
         return
 
