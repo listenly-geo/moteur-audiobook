@@ -3,7 +3,7 @@ name: Moteur Audiobook - Génération fiches
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "0 6 * * 1"  # tous les lundis 6h UTC — 1 épisode traité par run
+    - cron: "0 6 * * *"  # tous les jours 6h UTC -- 1 fiche/jour (stock ou minage), voir generate_audiobook_fiches.py
 
 permissions:
   contents: write
