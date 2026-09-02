@@ -63,6 +63,12 @@ WHISPER_MAX_BYTES = 24 * 1024 * 1024  # marge sous la limite 25 Mo de l'API Whis
 # fiches reelles avant de faire confiance a l'aveugle (voir echange avec Claude du 02/09/2026).
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 STATE_FILE = "automation/state/processed_episodes.json"
+# Stock de questions en attente de publication (02/09/2026) : le mining (transcription +
+# extraction) reste groupe par episode comme avant, mais la PUBLICATION passe a 1 fiche/jour
+# -- meme principe que le Moteur Trafic B2B (podcast-btb). Cout total identique (chaque fiche
+# a deja son propre appel Claude, seul le rythme de publication change), juste etale dans le
+# temps plutot que publie d'un coup (3-6 fiches simultanees par episode mine).
+STOCK_FILE = "automation/state/question_stock.json"
 
 
 def log(msg):
@@ -149,6 +155,19 @@ def save_state(processed_guids):
     os.makedirs(os.path.dirname(STATE_FILE), exist_ok=True)
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(sorted(processed_guids), f, ensure_ascii=False, indent=2)
+
+
+def load_stock():
+    if os.path.exists(STOCK_FILE):
+        with open(STOCK_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
+def save_stock(stock):
+    os.makedirs(os.path.dirname(STOCK_FILE), exist_ok=True)
+    with open(STOCK_FILE, "w", encoding="utf-8") as f:
+        json.dump(stock, f, ensure_ascii=False, indent=2)
 
 
 # ─────────────────────────────────────────────
@@ -434,6 +453,23 @@ def generate_sitemap():
 # Main
 # ─────────────────────────────────────────────
 def main():
+    stock = load_stock()
+
+    if stock:
+        # Stock disponible : on publie UNE seule fiche aujourd'hui, pas de minage necessaire.
+        item = stock.pop(0)
+        log(f"Publication depuis le stock ({len(stock)} restante(s) apres celle-ci) : {item['question']['question'][:70]}...")
+        html = generate_fiche(
+            PODCAST_NAME, item["episode_title"], item["guest_name"], item["bio_courte"],
+            item["question"], item["slug"],
+        )
+        write_fiche_locally(item["slug"], html)
+        save_stock(stock)
+        generate_sitemap()
+        log("Run terminé (1 fiche publiée depuis le stock).")
+        return
+
+    # Stock vide : miner de(s) nouvel(aux) episode(s).
     episodes = fetch_rss()
     processed = load_state()
 
@@ -473,23 +509,42 @@ def main():
             guest_name = extraction.get("auteur_invite", "").strip() or "l'invité de l'épisode"
             bio_courte = extraction.get("bio_courte_auteur", "")
 
+            new_items = []
             for q in extraction.get("questions", []):
                 slug = slugify(q["question"])
                 if not slug:
                     continue
-                html = generate_fiche(PODCAST_NAME, ep["title"], guest_name, bio_courte, q, slug)
-                write_fiche_locally(slug, html)
-                time.sleep(2)  # marge rate-limit API
+                new_items.append({
+                    "episode_title": ep["title"],
+                    "guest_name": guest_name,
+                    "bio_courte": bio_courte,
+                    "question": q,
+                    "slug": slug,
+                })
 
             processed.add(ep["guid"])
             save_state(processed)
+
+            if new_items:
+                # Publie IMMEDIATEMENT la 1ere fiche de ce lot fraichement mine (garde le
+                # rythme 1/jour meme le jour du minage) ; le reste rejoint le stock pour les
+                # jours suivants.
+                first = new_items.pop(0)
+                log(f"Publication immédiate (1ère fiche de l'épisode) : {first['question']['question'][:70]}...")
+                html = generate_fiche(
+                    PODCAST_NAME, first["episode_title"], first["guest_name"], first["bio_courte"],
+                    first["question"], first["slug"],
+                )
+                write_fiche_locally(first["slug"], html)
+                stock.extend(new_items)
 
         except Exception as e:
             log(f"❌ Erreur sur l'épisode {ep['title']} : {e}")
             continue
 
+    save_stock(stock)
     generate_sitemap()
-    log("Run terminé.")
+    log(f"Run terminé ({len(stock)} question(s) en stock pour les prochains jours).")
 
 
 if __name__ == "__main__":
