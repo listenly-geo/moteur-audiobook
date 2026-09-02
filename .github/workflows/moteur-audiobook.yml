@@ -29,6 +29,7 @@ jobs:
       - name: Run pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           RSS_URL: 'https://www.arteradio.com/xml_sound_serie?seriename=%22BOOKMAKERS%22'
           PODCAST_NAME: "Bookmakers"
