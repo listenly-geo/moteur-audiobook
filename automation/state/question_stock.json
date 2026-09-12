@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "episode_title": "Bertrand Belin : l’oiseau fait son nid (1/3)",
+    "guest_name": "Bertrand Belin",
+    "bio_courte": "Chanteur et écrivain breton né en 1970, auteur de huit albums et d'une poignée de romans intrigants. Fils de pêcheurs du Morbihan, il a grandi en milieu HLM dans un contexte de violence domestique et de précarité, avant une bifurcation décisive à 16 ans vers Paris qui a transformé sa trajectoire socio-culturelle.",
+    "question": {
+      "question": "Comment un enfant de milieu ouvrier précarisé peut-il devenir auteur malgré l'absence de capital culturel familial ?",
+      "reponse_brute": "Belin décrit sa trajectoire comme une rencontre décisive à 17 ans avec une jeune Parisienne dont la famille (mère, père, sœurs) l'a pris en charge inconditionnellement. Cette famille bourgeoise l'a exposé à la littérature, la philosophie, le cinéma et la musique, compensant l'absence totale de livres dans son enfance (que des encyclopédies). Le soutien matériel et intellectuel de cette famille a été transformateur, lui donnant confiance et envie de lire des pavés russes.",
+      "citation": "C'était surtout son père Gérard qui à une époque avait animé des après-midi de conversations philosophiques... C'est vraiment fou, cette aide qui m'a été apportée inconditionnelle. Quand j'étais arrivé chez elle, elle avait deux enfants déjà... la maman, elle avait tout à coup ces deux filles et puis deux autres bouches à nourrir... C'est ça aussi l'entrée de la chance, c'est une main tendue."
+    },
+    "slug": "comment-un-enfant-de-milieu-ouvrier-precarise-peut-il-devenir-auteur-malgre-labs"
+  },
+  {
+    "episode_title": "Bertrand Belin : l’oiseau fait son nid (1/3)",
+    "guest_name": "Bertrand Belin",
+    "bio_courte": "Chanteur et écrivain breton né en 1970, auteur de huit albums et d'une poignée de romans intrigants. Fils de pêcheurs du Morbihan, il a grandi en milieu HLM dans un contexte de violence domestique et de précarité, avant une bifurcation décisive à 16 ans vers Paris qui a transformé sa trajectoire socio-culturelle.",
+    "question": {
+      "question": "Comment passer du musicien de studio anonyme à auteur-compositeur reconnu sans succès populaire massif ?",
+      "reponse_brute": "Belin a travaillé une décennie comme guitariste de studio pour des artistes variés (Benabar, Régine, Juliette Gréco, Boy George) en gagnant péniblement le SMIC. À 30 ans, après avoir abandonné l'écriture pendant dix ans, il reprend la composition. Une manager rencontrée au Forum des Halles devient sa manageuse et fait circuler ses chansons jusqu'à ce qu'un premier album soit coproduit par deux producteurs ayant du poids culturel. L'album vend modestement mais gagne du soutien critique.",
+      "citation": "J'ai eu une période autour de 18-20 ans où j'écrivais des chansons et je les chantais en public... J'ai laissé tomber ça pendant une dizaine d'années. J'ai repris vers 30 ans... Grâce à elle, à son enthousiasme et à son soutien, elle a fait bouger les lignes... l'album a quand même plu à l'époque. C'est-à-dire que c'était un succès modeste, mais ce n'était pas un coup d'épée dans l'eau."
+    },
+    "slug": "comment-passer-du-musicien-de-studio-anonyme-a-auteur-compositeur-reconnu-sans-s"
+  },
+  {
+    "episode_title": "Bertrand Belin : l’oiseau fait son nid (1/3)",
+    "guest_name": "Bertrand Belin",
+    "bio_courte": "Chanteur et écrivain breton né en 1970, auteur de huit albums et d'une poignée de romans intrigants. Fils de pêcheurs du Morbihan, il a grandi en milieu HLM dans un contexte de violence domestique et de précarité, avant une bifurcation décisive à 16 ans vers Paris qui a transformé sa trajectoire socio-culturelle.",
+    "question": {
+      "question": "La violence paternelle doit-elle devenir matière à fiction : comment transmuer le trauma familial en œuvre ?",
+      "reponse_brute": "Le père brutal, alcoolique et violent hante l'ensemble de l'œuvre de Belin depuis son premier album (chanson 'Le Colosse'). Cette violence domestique, les coups de ceinturon, le sang, réapparaît dans son premier roman 'Requin', puis en filigrane dans 'Littoral' et 'La Figure'. Le passage qu'il lit montre un narrateur battue envisageant le meurtre du père, puis refusant par peur que la culpabilité soit pire que le purgatoire vécu. Il choisit de survivre plutôt que de tuer.",
+      "citation": "Non, merci. Et j'ai fait autrement... Je connais ma gentillesse et je ne doute pas qu'au bout de peu, j'aurais tout pardonné au chef tué, pour me vomir moi-même, l'assassin, le monstre, le vrai. À la faveur d'un maudit renversement des rôles, j'aurais payé l'addition."
+    },
+    "slug": "la-violence-paternelle-doit-elle-devenir-matiere-a-fiction-comment-transmuer-le"
+  },
+  {
+    "episode_title": "Bertrand Belin : l’oiseau fait son nid (1/3)",
+    "guest_name": "Bertrand Belin",
+    "bio_courte": "Chanteur et écrivain breton né en 1970, auteur de huit albums et d'une poignée de romans intrigants. Fils de pêcheurs du Morbihan, il a grandi en milieu HLM dans un contexte de violence domestique et de précarité, avant une bifurcation décisive à 16 ans vers Paris qui a transformé sa trajectoire socio-culturelle.",
+    "question": {
+      "question": "Comment la pêche et l'archéologie enfantines deviennent-elles des métaphores créatives de l'écriture ?",
+      "reponse_brute": "Enfant en milieu HLM violent, Belin trouvait refuge dans la pêche avec son père, la décharge publique ('supermarché' où récupérer des pièces de vélos), et les fouilles archéologiques amateurs. Ces activités le consolaient en le 'prenant' complètement, en le faisant oublier la violence ambiante. L'archéologie devient passion dévorante chez le narrateur de son roman 'Requin'. Ces quêtes enfantines de trésor structurent sa poétique : chercher, fouiller, assembler des fragments trouvés.",
+      "citation": "ça, ça me consolait un peu dans le sens où ça me faisait oublier le reste parce que quand on est à la recherche d'un trésor on est vraiment pris par ce qu'on fait... c'était un genre de supermarché pour moi quand j'étais petit... On passait des après-midi entiers parmi les fumées toxiques de la décharge à ciel ouvert."
+    },
+    "slug": "comment-la-peche-et-larcheologie-enfantines-deviennent-elles-des-metaphores-crea"
+  },
+  {
+    "episode_title": "Bertrand Belin : l’oiseau fait son nid (1/3)",
+    "guest_name": "Bertrand Belin",
+    "bio_courte": "Chanteur et écrivain breton né en 1970, auteur de huit albums et d'une poignée de romans intrigants. Fils de pêcheurs du Morbihan, il a grandi en milieu HLM dans un contexte de violence domestique et de précarité, avant une bifurcation décisive à 16 ans vers Paris qui a transformé sa trajectoire socio-culturelle.",
+    "question": {
+      "question": "Faut-il choisir un pseudonyme ou signer de son vrai nom administratif quand on débute en tant qu'auteur ?",
+      "reponse_brute": "Belin n'a jamais envisagé un pseudonyme pour ses débuts discographiques, croyant que personne ne s'intéresserait à son premier album. Il aurait gardé son nom de guitariste. Rétrospective, il nuance : un nom peut être formaté par l'imaginaire que l'artiste construit autour (exemple Jacques Higelin). Pour un jeune auteur hésitant, il conseille de bien y réfléchir d'abord car un mauvais pseudonyme peut être pire que le vrai nom.",
+      "citation": "je ne pensais pas que je ferais un deuxième disque je me disais ce disque de toute façon personne ne va s'y intéresser donc je vais retourner à ma vie de guitariste... mais s'il s'appelait Bertrand Velin je leur dirais, choisis un autre nom franchement... Jacques Higelin quand on pense à lui, on pense à son art à son parcours, à ses chansons magnifiques à sa truculence il a fabriqué son propre nom il a gorgé son nom d'un imaginaire"
+    },
+    "slug": "faut-il-choisir-un-pseudonyme-ou-signer-de-son-vrai-nom-administratif-quand-on-d"
+  },
+  {
+    "episode_title": "Nathacha Appanah : L’apanage du pied de biche (3/3)",
+    "guest_name": "Nathacha Appanah",
+    "bio_courte": "Autrice mauricienne publiée chez Gallimard depuis 2003, elle a mis 16 ans à écrire son roman emblématique « Rien ne t'appartient » (2021), plongée dans l'univers d'une pension pour filles gâchées au Sri Lanka, après une période de 8 ans sans publier entre 2007 et 2015.",
+    "question": {
+      "question": "Comment gérer l'absence de reconnaissance familiale quand on devient écrivain et que sa famille n'a pas de tradition littéraire ?",
+      "reponse_brute": "Appanah explique que sa famille n'a reconnu son succès qu'au niveau des prix et des compétitions. Sa mère lui a dit qu'elle avait perdu à plusieurs reprises. Ils ont longtemps espéré qu'elle abandonne l'écriture pour continuer une carrière de journaliste. Elle pense que si elle arrêtait d'écrire demain, cela n'aurait aucun effet sur eux.",
+      "citation": "que ça marchait pour moi ce n'est pas un moment qui a encore existé pour eux à leurs yeux je crois que ça aurait un sens le jour où je gagnerai une compétition si vous gagnez le concours là c'est fort je pense que ça ils diront ah oui là il se passe un truc"
+    },
+    "slug": "comment-gerer-labsence-de-reconnaissance-familiale-quand-on-devient-ecrivain-et"
+  },
+  {
+    "episode_title": "Nathacha Appanah : L’apanage du pied de biche (3/3)",
+    "guest_name": "Nathacha Appanah",
+    "bio_courte": "Autrice mauricienne publiée chez Gallimard depuis 2003, elle a mis 16 ans à écrire son roman emblématique « Rien ne t'appartient » (2021), plongée dans l'univers d'une pension pour filles gâchées au Sri Lanka, après une période de 8 ans sans publier entre 2007 et 2015.",
+    "question": {
+      "question": "Faut-il se sentir coupable quand l'exigence formelle de l'écriture devient complexe et éloignée du lecteur ordinaire ?",
+      "reponse_brute": "Appanah sépare sa culpabilité de sa recherche formelle. Elle explique que sa culpabilité réside ailleurs, dans sa vie personnelle. Dans l'intimité de l'écriture, elle s'autorise une exigence de forme et une ambition d'éclectisme sans culpabilité. Elle accepte son incapacité à refaire la même chose.",
+      "citation": "Ma culpabilité n'est pas à cet endroit-là. Elle est tellement présente ailleurs qu'au moins là, dans l'intimité de l'écriture, elle n'est pas encore entrée. Ma faiblesse réside dans une certaine exigence de la forme et dans l'ambition de toujours faire autrement"
+    },
+    "slug": "faut-il-se-sentir-coupable-quand-lexigence-formelle-de-lecriture-devient-complex"
+  },
+  {
+    "episode_title": "Nathacha Appanah : L’apanage du pied de biche (3/3)",
+    "guest_name": "Nathacha Appanah",
+    "bio_courte": "Autrice mauricienne publiée chez Gallimard depuis 2003, elle a mis 16 ans à écrire son roman emblématique « Rien ne t'appartient » (2021), plongée dans l'univers d'une pension pour filles gâchées au Sri Lanka, après une période de 8 ans sans publier entre 2007 et 2015.",
+    "question": {
+      "question": "Quand cesse-t-on de se demander si on est vraiment écrivain et comment formule-t-on cette légitimité ?",
+      "reponse_brute": "Appanah décrit le moment où elle s'est sentie écrivaine après la publication de « Tropique de la violence ». Elle précise qu'elle dit publiquement « j'écris des livres » mais qu'en intimité, elle se dit « je suis écrivaine ». Elle refuse la formule officielle d'« autrice » pour garder une relation plus directe à l'acte.",
+      "citation": "Quand on me dit, qu'est-ce que tu fais dans la vie ? Je dis, j'écris des livres. Je ne dis pas, je suis autrice ou auteur, je dis, j'écris des livres. Mais dans ma tête, je dirais, dans mon intimité, je me dis, je suis écrivaine. Je crois que c'est arrivé après Tropique de la violence"
+    },
+    "slug": "quand-cesse-t-on-de-se-demander-si-on-est-vraiment-ecrivain-et-comment-formule-t"
+  },
+  {
+    "episode_title": "Nathacha Appanah : L’apanage du pied de biche (3/3)",
+    "guest_name": "Nathacha Appanah",
+    "bio_courte": "Autrice mauricienne publiée chez Gallimard depuis 2003, elle a mis 16 ans à écrire son roman emblématique « Rien ne t'appartient » (2021), plongée dans l'univers d'une pension pour filles gâchées au Sri Lanka, après une période de 8 ans sans publier entre 2007 et 2015.",
+    "question": {
+      "question": "Comment ne pas se décourager face aux longues périodes de doute et au sentiment que le livre que vous écrivez ne marchera jamais ?",
+      "reponse_brute": "Appanah révèle un rituel personnel : elle consulte les cahiers du livre précédent où elle a traversé des moments de doute. Cela lui rappelle que c'est normal, que c'est comme si à chaque fois elle devait réapprendre. Elle perçoit chaque nouveau projet comme un moment de recommencement où elle se tient au-dessus d'un plateau désert.",
+      "citation": "Dans mes cahiers qui accompagnent les romans, souvent je consulte le cahier précédent, du livre précédent, où il y a des moments de doute, où j'ai pu les traverser. et je me dis à ma main, tu vois, c'est normal. C'est comme si à chaque fois je réapprenais. À chaque fois je devais me tenir à nouveau au-dessus d'un plateau désert"
+    },
+    "slug": "comment-ne-pas-se-decourager-face-aux-longues-periodes-de-doute-et-au-sentiment"
+  },
+  {
+    "episode_title": "Nathacha Appanah : L’apanage du pied de biche (3/3)",
+    "guest_name": "Nathacha Appanah",
+    "bio_courte": "Autrice mauricienne publiée chez Gallimard depuis 2003, elle a mis 16 ans à écrire son roman emblématique « Rien ne t'appartient » (2021), plongée dans l'univers d'une pension pour filles gâchées au Sri Lanka, après une période de 8 ans sans publier entre 2007 et 2015.",
+    "question": {
+      "question": "Quel est le coût réel d'être autrice sans agent : négociation d'avaloir, contrats, traductions, droits d'adaptation ?",
+      "reponse_brute": "Appanah révèle qu'elle vit de son écriture depuis « Tropique de la violence » (2016), mais que ses conditions financières ont varié considérablement. Elle n'a reçu zéro avaloir pour son premier roman, puis 1000 euros pour les suivants, puis 20 000 euros pour « En attendant demain » qu'elle a dû rembourser intégralement quand le livre n'a pas marché. Elle souligne que les traductions rapportent très peu (1500 euros pour trois mois de travail) et qu'elle n'a pas d'agent. Elle critique fortement la sous-rémunération des traducteurs.",
+      "citation": "Que je n'avais plus, parce que je n'avais pas travaillé pendant 7 ans, 8 ans. Waouh, situation tout à fait inédite. Et que j'élevais un enfant, et que c'était très compliqué... Les traducteurs et traductrices devraient être payés dix fois plus"
+    },
+    "slug": "quel-est-le-cout-reel-detre-autrice-sans-agent-negociation-davaloir-contrats-tra"
+  }
+]
