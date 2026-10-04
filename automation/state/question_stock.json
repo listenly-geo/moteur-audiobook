@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "episode_title": "Daniel Pennac : Vercors à corps (3/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur de plus de 50 livres dont Au bonheur des ogres (1985), Journal d'un corps (2012, 340 000 exemplaires) et Comme un roman (1992, 1 180 000 exemplaires). Il a également signé le scénario d'Ernest et Célestine, film d'animation récompensé à Cannes et au César.",
+    "question": {
+      "question": "Combien de pages raisonnablement produire par jour et comment accepter les rendements faibles ?",
+      "reponse_brute": "Pennac se compare à une baleine qui ingère du plancton : seuls 10% sont conservés. Une bonne journée produit une dizaine de lignes ; les moments de folie productive donnent 4 pages mais restent rarissimes. Le reste doit être jeté. Il illustre par l'anecdote de la cocaïne : 17 pages écrites sous euphorie ont été réduites à une page et demie au relecture.",
+      "citation": "quand la journée n'est pas trop mauvaise vous écrivez une dizaine de lignes et dans des moments qui s'apparentent à la folie 4 pages mais c'est très rare sinon tout est à jeter au panier"
+    },
+    "slug": "combien-de-pages-raisonnablement-produire-par-jour-et-comment-accepter-les-rende"
+  },
+  {
+    "episode_title": "Daniel Pennac : Vercors à corps (3/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur de plus de 50 livres dont Au bonheur des ogres (1985), Journal d'un corps (2012, 340 000 exemplaires) et Comme un roman (1992, 1 180 000 exemplaires). Il a également signé le scénario d'Ernest et Célestine, film d'animation récompensé à Cannes et au César.",
+    "question": {
+      "question": "Quel rôle joue le lecteur vivant dans la révision d'un manuscrit ?",
+      "reponse_brute": "L'épouse de Pennac, Mina, lit à voix haute la première version du manuscrit. Si elle hésite, bute sur un mot, s'essouffle, c'est le texte qui cloche, pas elle. Pour Journal d'un corps, elle a détecté de la théorisation à partir de la page 25 ; ensemble, ils ont supprimé 170 pages sur 185 de passage théorique. C'est un test d'oralité absolue du texte.",
+      "citation": "Si elle hésite, bute sur un mot, s'essouffle ou sort de la route ce n'est pas elle, c'est le texte. Sa lecture de la V1 de la Fée Carabine vous a permis d'en fusiller 160 pages."
+    },
+    "slug": "quel-role-joue-le-lecteur-vivant-dans-la-revision-dun-manuscrit"
+  },
+  {
+    "episode_title": "Daniel Pennac : Vercors à corps (3/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur de plus de 50 livres dont Au bonheur des ogres (1985), Journal d'un corps (2012, 340 000 exemplaires) et Comme un roman (1992, 1 180 000 exemplaires). Il a également signé le scénario d'Ernest et Célestine, film d'animation récompensé à Cannes et au César.",
+    "question": {
+      "question": "Comment négocier son pourcentage et ses droits avec un éditeur sans se laisser intimider ?",
+      "reponse_brute": "Pennac recommande de ne jamais éditer à compte d'auteur et de toujours recevoir une somme symbolique lors de la cession du manuscrit. Il conseille de faire transiter la négociation par un tiers non émotionnellement impliqué (avocat, ami). Concernant ses pourcentages, il a joué à pile ou face avec Antoine Gallimard : pile il restait à 15%, face il montait. Il a perdu la première fois, gagné la seconde. À partir d'une certaine tranche, il s'est arrêté là définitivement.",
+      "citation": "Jouons-le à pile ou face. Pile, je reste à 15. Face, tu me donnes davantage. Et on refait l'opération au prochain bouquin. Dis d'accord. On joue, pile ou face, tac, et je paume."
+    },
+    "slug": "comment-negocier-son-pourcentage-et-ses-droits-avec-un-editeur-sans-se-laisser-i"
+  },
+  {
+    "episode_title": "Daniel Pennac : Vercors à corps (3/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur de plus de 50 livres dont Au bonheur des ogres (1985), Journal d'un corps (2012, 340 000 exemplaires) et Comme un roman (1992, 1 180 000 exemplaires). Il a également signé le scénario d'Ernest et Célestine, film d'animation récompensé à Cannes et au César.",
+    "question": {
+      "question": "Comment utiliser le doute et l'échec scolaire comme moteurs créatifs sur toute une carrière ?",
+      "reponse_brute": "Pennac écrit pour des raisons de santé. Le petit cancre qui ne rend pas les armes est au cœur de son processus créatif : soit c'est lui qui écrit, soit il écrit contre lui. Ce monumental échec des débuts lui a permis de se construire une maison, une pension personnelle où il peut exister. L'écriture fonctionne comme une clinique psychiatrique face à la mélancolie des vieux.",
+      "citation": "Le petit cancre qui ne rend pas les armes, il y est pour quelque chose. Soit c'est lui qui écrit, soit j'écris contre lui. Mais il y a quelque chose dans ce monumental échec des débuts qui fait que je me suis fait une maison à moi."
+    },
+    "slug": "comment-utiliser-le-doute-et-lechec-scolaire-comme-moteurs-creatifs-sur-toute-un"
+  },
+  {
+    "episode_title": "Daniel Pennac : Vercors à corps (3/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur de plus de 50 livres dont Au bonheur des ogres (1985), Journal d'un corps (2012, 340 000 exemplaires) et Comme un roman (1992, 1 180 000 exemplaires). Il a également signé le scénario d'Ernest et Célestine, film d'animation récompensé à Cannes et au César.",
+    "question": {
+      "question": "Comment enseigner l'écriture à des élèves paralysés par les normes grammaticales ?",
+      "reponse_brute": "Pennac a invité des adolescents primo-arrivants à noter leurs rêves chaque matin dans un carnet sans parler d'écriture. Les premiers mots étaient rares, une image, une sensation. Il transcrivait ensuite leurs dictées au tableau en écriture correcte. Puis il montrait le chemin de leur écriture phonétique chaotique vers l'écriture présentable : une chirurgie esthétique minutieuse, pas une condamnation. Tous se sont mis à écrire après avoir compris que l'imperfection était déjà une écriture.",
+      "citation": "On leur avait fait croire que leur écriture n'en était pas une. Or, elle en était une, puisque me dictant ce qu'ils avaient écrit, je pouvais écrire un texte parfait au tableau. C'est simplement que c'était une écriture phonétique parce qu'ils se débrouillaient comme ils pouvaient."
+    },
+    "slug": "comment-enseigner-lecriture-a-des-eleves-paralyses-par-les-normes-grammaticales"
+  },
+  {
+    "episode_title": "Daniel Pennac : le grand marchand de prose (2/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur français de la saga Malocène (8 tomes, 6,7 millions d'exemplaires vendus en France depuis 1985), ancien professeur, qui a révolutionné le roman policier français en y introduisant une narration baroque, poétique et profondément humaniste centrée sur Benjamin Malocène, bouc émissaire professionnel d'une famille nombreuse de Belleville.",
+    "question": {
+      "question": "Comment naît un roman : faut-il planifier ou se laisser porter par l'oral et la raconterais ?",
+      "reponse_brute": "Pennac révèle que le conseil décisif vient de Jacques Benac au jardin des plantes : écrire comme on raconte des histoires. Son processus consiste d'abord à inventer oralement auprès d'amis successifs, en exposant d'abord une idée simple, puis un embryon, puis l'histoire entière. L'écriture d'Au bonheur des ogres a pris trois ans (week-ends et nuits), en parallèle de son métier de professeur, sans véritable plan initial malgré ses prétentions.",
+      "citation": "Tu n'as qu'à écrire comme tu nous racontes. Quand tu nous racontes des histoires, considère que ce n'est pas de l'oral, mais de l'écriture."
+    },
+    "slug": "comment-nait-un-roman-faut-il-planifier-ou-se-laisser-porter-par-loral-et-la-rac"
+  },
+  {
+    "episode_title": "Daniel Pennac : le grand marchand de prose (2/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur français de la saga Malocène (8 tomes, 6,7 millions d'exemplaires vendus en France depuis 1985), ancien professeur, qui a révolutionné le roman policier français en y introduisant une narration baroque, poétique et profondément humaniste centrée sur Benjamin Malocène, bouc émissaire professionnel d'une famille nombreuse de Belleville.",
+    "question": {
+      "question": "Comment se négocie le passage d'une collection littéraire 'inférieure' vers le prestige du succès commercial ?",
+      "reponse_brute": "Pennac envoie Au bonheur des ogres à la série noire (collection de Gallimard au sous-sol, marquant la hiérarchie), accueilli par Christian Mounier et Robert Sula. Sula prédit exactement 13 045 exemplaires à ne pas dépasser, sinon passage à la collection blanche. Pennac passe effectivement en collection blanche au troisième tome (La petite marchande de prose), ce qui provoque un scandale parmi ses amis de gauche le traitant de traître. Le succès crescendo et l'amitié avec ses deux éditeurs transforment ce passage en divine surprise.",
+      "citation": "Et là, mes copains de gauche m'ont traité de social traître ça a été un psychodrame terrible... J'ai eu de la chance, quoi. Oui, ça a été une divine surprise. Alors, je l'associe à ma rencontre avec Sula et Mounier."
+    },
+    "slug": "comment-se-negocie-le-passage-dune-collection-litteraire-inferieure-vers-le-pres"
+  },
+  {
+    "episode_title": "Daniel Pennac : le grand marchand de prose (2/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur français de la saga Malocène (8 tomes, 6,7 millions d'exemplaires vendus en France depuis 1985), ancien professeur, qui a révolutionné le roman policier français en y introduisant une narration baroque, poétique et profondément humaniste centrée sur Benjamin Malocène, bouc émissaire professionnel d'une famille nombreuse de Belleville.",
+    "question": {
+      "question": "Quelles contraintes formelles libèrent vraiment l'écrivain au lieu de l'étouffer ?",
+      "reponse_brute": "Pennac établit des contraintes strictes pour Malocène : pas de description physique du héros (toujours de dos), pas d'analyse psychologique, pas de digressions fantaisistes gratuites. Ces contraintes du polar (thématique, narrative, psychologique) créent un cadre qui force la maîtrise et prévient la gloriole stylistique. Sans elles, on sombre dans la fantaisie gratuite où l'on est esthétiquement content de soi mais le texte perd tout sens.",
+      "citation": "Il faut la tenir très serrée. Sinon on entre dans la gratuité, la perte de sens. Et très souvent la gratuité intervient dans un moment où on est esthétiquement très content de soi."
+    },
+    "slug": "quelles-contraintes-formelles-liberent-vraiment-lecrivain-au-lieu-de-letouffer"
+  },
+  {
+    "episode_title": "Daniel Pennac : le grand marchand de prose (2/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur français de la saga Malocène (8 tomes, 6,7 millions d'exemplaires vendus en France depuis 1985), ancien professeur, qui a révolutionné le roman policier français en y introduisant une narration baroque, poétique et profondément humaniste centrée sur Benjamin Malocène, bouc émissaire professionnel d'une famille nombreuse de Belleville.",
+    "question": {
+      "question": "Comment un écrivain doit-il gérer les refus éditoriaux et se trouver des interlocuteurs ?",
+      "reponse_brute": "Face aux lettres de refus, Pennac conseille de continuer à écrire sans attendre la postérité, de ne pas se prendre pour un écrivain et surtout de chercher des interlocuteurs. Il souligne la difficulté de ne pas avoir de retours, mais recommande de prendre au sérieux même les critiques, de raconter ses histoires à des amis successivement. Cette recherche d'interlocuteurs avait été sa méthode créative avant la publication.",
+      "citation": "Quel conseil donnez-vous à celles et ceux qui nous écoutent en ce moment et qui accumulent les lettres de refus pour leur roman ? Continuez à écrire sans prendre des pauses de trois quarts face à la postérité. Ne vous prenez pas pour des écrivains, je vous en prie... Alors chercher des interlocuteurs prenez au sérieux même les gens qui vous engueulent."
+    },
+    "slug": "comment-un-ecrivain-doit-il-gerer-les-refus-editoriaux-et-se-trouver-des-interlo"
+  },
+  {
+    "episode_title": "Daniel Pennac : le grand marchand de prose (2/3)",
+    "guest_name": "Daniel Pennac",
+    "bio_courte": "Auteur français de la saga Malocène (8 tomes, 6,7 millions d'exemplaires vendus en France depuis 1985), ancien professeur, qui a révolutionné le roman policier français en y introduisant une narration baroque, poétique et profondément humaniste centrée sur Benjamin Malocène, bouc émissaire professionnel d'une famille nombreuse de Belleville.",
+    "question": {
+      "question": "Quel rôle jouent les lecteurs et la communauté de lecture dans la prolongation d'une œuvre sur 40 ans ?",
+      "reponse_brute": "Pennac reçoit une lettre en 2006 d'une adolescente de 15 ans éperdument troublée par ses histoires Malocène, qui lui demande d'écrire plus vite pour qu'elles sortent de sa tête. Cette lectrice devient plus tard écrivaine et critique. À la question de Blandine Rinkel sur le rôle de la communauté de lecteurs, Pennac nuance : il ne croit pas que l'assentiment du public ait créé une sorte de dépendance créative, mais plutôt qu'il s'est laissé aller à l'écriture en cherchant à produire ce qu'il souhaite vivre lui-même, créant une harmonie qui épargne les individualités.",
+      "citation": "Ce que j'y souhaite, c'est ce que je souhaite vivre. Les gens ressentent dans les malocènes, comment dire, une harmonie, mais une harmonie qui épargne les individualités. Chacun est absolument ce qu'il est, fait absolument ce qu'il veut."
+    },
+    "slug": "quel-role-jouent-les-lecteurs-et-la-communaute-de-lecture-dans-la-prolongation-d"
+  }
+]
