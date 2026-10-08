@@ -11,20 +11,20 @@ from pathlib import Path
 
 FICHES_DIR = "pages/moteur-audiobook"
 SITE_BASE_URL = "https://audiobooklab.fr/blog-audiobook/"
-INDEXED_FILE = "automation/state/indexed_urls.json"
+PROPOSED_HISTORY_FILE = "automation/state/proposed_history.json"
 
-def load_indexed():
-    """Charge la liste des URLs déjà indexées."""
-    if os.path.exists(INDEXED_FILE):
-        with open(INDEXED_FILE, "r", encoding="utf-8") as f:
+def load_proposed_history():
+    """Charge la liste des URLs déjà proposées (jamais les reproposer)."""
+    if os.path.exists(PROPOSED_HISTORY_FILE):
+        with open(PROPOSED_HISTORY_FILE, "r", encoding="utf-8") as f:
             return set(json.load(f))
     return set()
 
-def save_indexed(indexed):
-    """Sauvegarde la liste des URLs indexées."""
-    os.makedirs(os.path.dirname(INDEXED_FILE), exist_ok=True)
-    with open(INDEXED_FILE, "w", encoding="utf-8") as f:
-        json.dump(sorted(list(indexed)), f, ensure_ascii=False, indent=2)
+def save_proposed_history(proposed):
+    """Sauvegarde la liste des URLs déjà proposées."""
+    os.makedirs(os.path.dirname(PROPOSED_HISTORY_FILE), exist_ok=True)
+    with open(PROPOSED_HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(list(proposed)), f, ensure_ascii=False, indent=2)
 
 def get_5_fiches_to_index():
     """Retourne les 5 dernières fiches HTML non indexées avec leurs URLs exactes."""
@@ -40,14 +40,14 @@ def get_5_fiches_to_index():
         reverse=True  # Plus récents en premier
     )
 
-    indexed = load_indexed()
+    proposed_history = load_proposed_history()
     to_propose = []
 
     for filename in fiche_files:
         slug = filename[:-5]  # Enlever .html
         url = f"{SITE_BASE_URL}{slug}.html"
 
-        if url not in indexed:
+        if url not in proposed_history:
             to_propose.append({
                 "slug": slug,
                 "url": url,
@@ -57,6 +57,11 @@ def get_5_fiches_to_index():
 
         if len(to_propose) >= 5:
             break
+
+    # Enregistrer ces 5 fiches dans l'historique (jamais les reproposer)
+    for fiche in to_propose:
+        proposed_history.add(fiche["url"])
+    save_proposed_history(proposed_history)
 
     return to_propose
 
@@ -68,16 +73,15 @@ def main():
     fiches = get_5_fiches_to_index()
 
     if not fiches:
-        print("✅ Toutes les fiches sont déjà indexées !")
+        print("✅ Aucune nouvelle fiche à proposer (toutes les fiches ont déjà été proposées).")
         return
 
-    print(f"\n🎯 {len(fiches)} fiche(s) à indexer dans Google Search Console :\n")
+    print(f"\n🎯 {len(fiches)} fiche(s) À INDEXER :\n")
 
     for i, fiche in enumerate(fiches, 1):
         print(f"{i}. {fiche['url']}")
 
-    print(f"\n💡 Une fois indexées, marque-les comme validées avec :")
-    print(f"   python3 automation/scripts/mark_indexed.py")
+    print(f"\n🔍 Lien GSC : https://search.google.com/u/1/search-console/performance/search-analytics?resource_id=sc-domain%3Aaudiobooklab.fr")
 
 if __name__ == "__main__":
     main()
