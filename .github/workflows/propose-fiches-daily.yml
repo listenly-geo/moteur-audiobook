@@ -1,0 +1,31 @@
+name: Propose fiches à indexer (quotidien)
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "30 6 * * *"  # 6h30 UTC chaque jour
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Propose 5 fiches à indexer
+        run: python3 automation/scripts/propose_fiches_to_index.py > /tmp/proposal.txt
+
+      - name: Afficher les liens proposés
+        run: cat /tmp/proposal.txt
+
+      - name: Créer un artifact avec les liens
+        uses: actions/upload-artifact@v4
+        with:
+          name: fiches-to-index-$(date +%Y%m%d)
+          path: /tmp/proposal.txt
+          retention-days: 30
