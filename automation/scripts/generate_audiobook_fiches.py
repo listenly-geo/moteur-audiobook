@@ -352,7 +352,7 @@ JSON-LD (@graph) à inclure dans une balise <script type="application/ld+json"> 
   mainEntityOfPage={page_url})
 - FAQPage (question principale + les 2 questions connexes de la FAQ)
 - Person pour {guest_name} (name, description={bio_courte})
-- Quotation ("@type":"Quotation", "text"=citation, "creator"={guest_name})
+IMPORTANT: N'INCLURE AUCUN Quotation ou autre type de schéma non-essentiel. Limiter strictement à Article, FAQPage, et Person.
 
 DESIGN : article éditorial premium, fond blanc, max-width 720px centré, bonne typographie
 (system fonts), encarts CTA visuellement distincts (fond légèrement teinté, bordure arrondie,
