@@ -61,7 +61,7 @@ def score_fiche_quality(question):
     return max(0, min(10, score))
 
 def get_best_fiches():
-    """Retourne les 5 meilleures fiches (score >= 6)."""
+    """Retourne les 5 meilleures fiches (score >= 4, ou moins si nécessaire pour quota)."""
 
     if not os.path.isdir(FICHES_DIR):
         print("❌ Dossier de fiches non trouvé")
@@ -74,8 +74,7 @@ def get_best_fiches():
     )
 
     proposed_history = load_proposed_history()
-    to_propose = []
-    skipped_low_quality = []
+    candidates = []
 
     for filename in fiche_files:
         slug = filename[:-5]
@@ -84,30 +83,24 @@ def get_best_fiches():
         if url not in proposed_history:
             question = slug.replace("-", " ")
             quality_score = score_fiche_quality(question)
+            candidates.append({
+                "slug": slug,
+                "url": url,
+                "quality_score": quality_score
+            })
 
-            if quality_score >= 6:  # Bon score seulement
-                to_propose.append({
-                    "slug": slug,
-                    "url": url,
-                    "quality_score": quality_score
-                })
-            else:
-                skipped_low_quality.append({
-                    "url": url,
-                    "quality_score": quality_score
-                })
+    # Trier par score décroissant
+    candidates.sort(key=lambda x: x["quality_score"], reverse=True)
 
-        if len(to_propose) >= 5:
-            break
+    # Prendre les 5 meilleures (ou moins si moins disponibles)
+    to_propose = candidates[:5]
 
-    # Enregistrer les fiches proposées + faible qualité (jamais les revoir)
+    # Enregistrer les fiches proposées
     for fiche in to_propose:
-        proposed_history.add(fiche["url"])
-    for fiche in skipped_low_quality:
         proposed_history.add(fiche["url"])
     save_proposed_history(proposed_history)
 
-    return to_propose, skipped_low_quality
+    return to_propose, []
 
 def main():
     print("=" * 80)
