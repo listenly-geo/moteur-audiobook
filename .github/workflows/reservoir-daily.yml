@@ -59,5 +59,5 @@ jobs:
         run: |
           git config user.name "reservoir-bot"
           git config user.email "actions@github.com"
-          git add data/keyword_planner.json automation/state/proposed_history.json
+          git add data/keyword_planner.json data/last_run.json automation/state/proposed_history.json
           git diff --staged --quiet || (git commit -m "data: pipeline audiobook — pages générées + titres optimisés Google Ads + TOP 5 indexés $(date +%Y-%m-%d)" && git push)

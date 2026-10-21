@@ -19,7 +19,10 @@ KEYWORD_FILE = "data/keyword_planner.json"
 GSC_FILE = "data/gsc/pages.json"
 PROPOSED_HISTORY_FILE = "automation/state/proposed_history.json"
 SITE_BASE_URL = "https://audiobooklab.fr/blog-audiobook/"
-SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+SCOPES = ["https://www.googleapis.com/auth/webmasters"]
+GSC_SITE = "sc-domain:audiobooklab.fr"
+SITEMAP_URL = "https://audiobooklab.fr/blog-audiobook/sitemap.xml"
+LAST_RUN_FILE = "data/last_run.json"
 
 def load_json(path, default=None):
     if not os.path.exists(path):
@@ -140,25 +143,42 @@ def get_gsc_token():
         return None
 
 def submit_to_gsc(urls, token):
+    """1) soumet le sitemap (seul levier API réel pour informer Google)
+    2) inspecte chaque URL proposée (état d'indexation). L'API ne peut PAS 'demander l'indexation'."""
+    from urllib.parse import quote
+    report = {"sitemap": None, "inspection": {}}
     if not token:
         print("⚠️  Soumission GSC : token manquant")
-        return []
+        return report
+    headers = {"Authorization": f"Bearer {token}"}
 
-    submitted = []
+    try:
+        r = requests.put(
+            f"https://www.googleapis.com/webmasters/v3/sites/{quote(GSC_SITE, safe='')}/sitemaps/{quote(SITEMAP_URL, safe='')}",
+            headers=headers, timeout=30)
+        report["sitemap"] = r.status_code
+        print(f"  {'✅' if r.status_code in (200, 204) else '⚠️ '} Sitemap soumis : code {r.status_code} {r.text[:120] if r.status_code >= 300 else ''}")
+    except Exception as e:
+        report["sitemap"] = str(e)[:80]
+        print(f"  ⚠️  Sitemap : {report['sitemap']}")
+
     for url in urls:
         try:
-            api_url = f"https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
-            body = {"inspectionUrl": url}
-            headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
-            r = requests.post(api_url, json=body, headers=headers, timeout=30)
+            r = requests.post(
+                "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect",
+                json={"inspectionUrl": url, "siteUrl": GSC_SITE, "languageCode": "fr"},
+                headers={**headers, "Content-Type": "application/json"}, timeout=30)
             if r.status_code == 200:
-                submitted.append(url)
-                print(f"  ✅ {url}")
+                st = r.json().get("inspectionResult", {}).get("indexStatusResult", {})
+                report["inspection"][url] = st.get("coverageState", "?")
+                print(f"  ✅ {url} → {report['inspection'][url]}")
             else:
-                print(f"  ⚠️  {url} : code {r.status_code}")
+                report["inspection"][url] = f"code {r.status_code}"
+                print(f"  ⚠️  {url} : code {r.status_code} {r.text[:100]}")
         except Exception as e:
+            report["inspection"][url] = str(e)[:50]
             print(f"  ⚠️  {url} : {str(e)[:50]}")
-    return submitted
+    return report
 
 def main():
     print("=" * 80)
@@ -227,8 +247,14 @@ def main():
     print("📤 Soumission à Google Search Console...\n")
     urls = [page["url"] for page in to_propose]
     token = get_gsc_token()
-    submitted = submit_to_gsc(urls, token)
-    print(f"\n✅ {len(submitted)}/{len(urls)} soumises à Google")
+    report = submit_to_gsc(urls, token)
+    os.makedirs("data", exist_ok=True)
+    with open(LAST_RUN_FILE, "w", encoding="utf-8") as f:
+        json.dump({"date": datetime.datetime.now().isoformat(), "sitemap": report["sitemap"],
+                   "pages": [{"titre": p["optimized_title"], "titre_original": p["original_title"],
+                              "score": p["score"], "url": p["url"],
+                              "google": report["inspection"].get(p["url"])} for p in to_propose]},
+                  f, ensure_ascii=False, indent=2)
 
     # Marquer comme proposées
     for page in to_propose:
