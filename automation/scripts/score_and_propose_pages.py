@@ -50,41 +50,12 @@ def extract_title_from_html(html_content):
     return match.group(1) if match else ""
 
 def optimize_title(original_title):
-    """Optimise le titre selon les règles:
-    - Tronque AVANT les mots de rupture: "et", "ou", "versus" (pas essentiels au sens)
-    - GARDE les mots contextuels: "pour", "quand", "si" (essentiels au sens)
-    - 50-60 chars max
-    - Termine par ?
-    """
-
-    title = original_title.strip().rstrip("?").strip()
-
-    # Mots de RUPTURE = on tronque avant (créent une 2e partie séparée)
-    rupture_words = [" et ", " ou ", " versus "]
-    earliest_cut = len(title)
-    for word in rupture_words:
-        pos = title.lower().find(word.lower())
-        if pos != -1 and pos < earliest_cut:
-            earliest_cut = pos
-
-    if earliest_cut < len(title):
-        title = title[:earliest_cut].strip()
-
-    # Ajoute ?
-    title = title + "?"
-
-    # Si trop long (>60), tronque au dernier MOT COMPLET avant 60 chars
-    if len(title) > 60:
-        # Cherche le dernier espace avant 60 (garde le mot complet)
-        last_space = title[:60].rfind(" ")
-        if last_space > 35:  # Garde au minimum 35 chars
-            # Garde le mot avant ce dernier espace
-            before_space = title[:last_space].rstrip()
-            title = before_space + "?"
-        else:
-            # Fallback: coupe après 55 chars et ajoute "?"
-            title = title[:55].rstrip() + "?"
-
+    """Garde la question d'origine (déjà complète et naturelle), juste nettoyée :
+    entités HTML décodées, espace avant '?' retiré, un seul '?' final."""
+    import html
+    title = html.unescape(original_title).replace("\xa0", " ").strip()
+    title = re.sub(r"\s+", " ", title)
+    title = title.rstrip(" ?").strip() + "?"
     return title
 
 def calculate_score(html_content, keywords_data, gsc_data, proposed_url):
