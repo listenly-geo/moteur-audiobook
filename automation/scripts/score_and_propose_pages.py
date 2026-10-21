@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-PIPELINE COMPLÈTE AUDIOBOOK
+PIPELINE SIMPLE AUDIOBOOK
 
 1. Charge pages générées (generate_audiobook_fiches.py)
-2. Google Ads volumes (keyword_planner.py)
-3. Score pages (volume + audiobook + GSC)
-4. GÉNÈRE titres optimisés basés sur Google Ads
-5. TOP 5 avec titres optimisés
-6. Propose à Google Search Console
+2. Score pages (volume Google Ads + audiobook + GSC)
+3. TOP 5 sélectionnées
+4. Optimise titres (règles: 50-60 chars, avant "quand/si/pour", +?)
+5. Propose à Google
 
-Titre optimisé = vraie requête Google avec volume
-Objectif: toucher plus de monde avec les requêtes réelles
+C'est tout.
 """
 
 import os, json, re, requests, datetime
@@ -30,7 +28,6 @@ def load_json(path, default=None):
         return json.load(f)
 
 def load_proposed():
-    """Charge les URLs déjà proposées."""
     if not os.path.exists(PROPOSED_HISTORY_FILE):
         return set()
     with open(PROPOSED_HISTORY_FILE) as f:
@@ -38,76 +35,58 @@ def load_proposed():
     return set(data) if isinstance(data, list) else set()
 
 def save_proposed(proposed_set):
-    """Sauvegarde les fiches proposées."""
     os.makedirs(os.path.dirname(PROPOSED_HISTORY_FILE), exist_ok=True)
     with open(PROPOSED_HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(sorted(list(proposed_set)), f, ensure_ascii=False, indent=2)
 
 def extract_title_from_html(html_content):
-    """Extrait le titre <title> du HTML."""
+    """Extrait le titre de la page (h1 ou title)."""
+    # Cherche h1 d'abord
+    match = re.search(r'<h1[^>]*>([^<]+)</h1>', html_content)
+    if match:
+        return match.group(1)
+    # Sinon title
     match = re.search(r'<title>([^<]+)</title>', html_content)
     return match.group(1) if match else ""
 
-def extract_h1_from_html(html_content):
-    """Extrait le h1 du HTML."""
-    match = re.search(r'<h1[^>]*>([^<]+)</h1>', html_content)
-    return match.group(1) if match else ""
+def optimize_title(original_title):
+    """Optimise le titre selon les règles: raccourci 50-60 chars, avant quand/si/pour, +?"""
 
-def find_best_matching_keyword(page_content, keywords_data):
-    """Trouve le meilleur keyword Google Ads pour la page."""
-    if not keywords_data or "idees" not in keywords_data:
-        return None, 0
+    title = original_title.strip().rstrip("?").strip()
 
-    content_lower = page_content.lower()
-    best_keyword = None
-    best_volume = 0
-    best_match_score = 0
+    # Tronque avant les mots de liaison
+    truncate_words = [" quand ", " si ", " pour ", " en ", " versus ", " ou "]
+    for word in truncate_words:
+        if word.lower() in title.lower():
+            title = title.split(word)[0].strip()
+            break
 
-    # Cherche le keyword qui matche le mieux avec le contenu de la page
-    for idea in keywords_data.get("idees", []):
-        requete = idea.get("requete", "").lower()
-        volume = idea.get("volume_mensuel_moyen", 0)
+    # Ajoute ?
+    title = title + "?"
 
-        # Calcule le score de match (nombre de mots en commun)
-        requete_words = set(requete.split())
-        content_words = set(content_lower.split())
-        overlap = len(requete_words & content_words)
+    # Si trop long, tronque à 60 chars
+    if len(title) > 60:
+        title = title[:57] + "?"
 
-        if overlap >= 2 and volume > best_volume:
-            best_keyword = idea.get("requete", "")
-            best_volume = volume
-            best_match_score = overlap
+    return title
 
-    return best_keyword, best_volume
+def calculate_score(html_content, keywords_data, gsc_data, proposed_url):
+    """Score simple: volume + audiobook + GSC."""
 
-def generate_optimized_title(original_title, best_keyword, volume):
-    """Génère un titre optimisé basé sur Google Ads keyword."""
+    html_lower = html_content.lower()
 
-    # Si on a un keyword Google Ads avec volume, l'utilise
-    if best_keyword and volume > 0:
-        title = best_keyword
-        # Ajoute ? si absent
-        if not title.endswith("?"):
-            title = title + "?"
-        # Assure 50-60 chars
-        if len(title) > 60:
-            title = title[:57] + "?"
-        return title, volume
+    # 1. Volume Google Ads - récupère le volume moyen
+    volume = 0
+    if keywords_data and "idees" in keywords_data:
+        volumes = [idea.get("volume_mensuel_moyen", 0) for idea in keywords_data.get("idees", [])]
+        volume = sum(volumes) / len(volumes) if volumes else 0
 
-    # Sinon, retourne le titre original
-    return original_title, 0
-
-def calculate_score(page_html, volume, keywords_data, gsc_data, proposed_url):
-    """Score page basé sur volume + audiobook relevance + GSC."""
-
-    # 1. Volume Google Ads (normalisé 0-10)
     vol_score = min(10, (volume / 100)) if volume else 0
 
-    # 2. Audiobook relevance (mots-clés)
-    html_lower = page_html.lower()
+    # 2. Audiobook relevance
     audiobook_keywords = ["audiobook", "revenu", "vivre", "publier", "droits",
                           "vente", "editeur", "auteur", "livre", "écrire", "contrat"]
-    audiobook_score = 10 if any(kw in html_lower for kw in audiobook_keywords) else 7
+    audiobook_score = 10 if any(kw in html_lower for kw in audiobook_keywords) else 6
 
     # 3. GSC performance
     gsc_score = 0
@@ -126,7 +105,6 @@ def calculate_score(page_html, volume, keywords_data, gsc_data, proposed_url):
     return round(min(10, final), 1)
 
 def get_gsc_token():
-    """Génère un token OAuth2 pour Google Search Console."""
     try:
         from google.oauth2 import service_account
         from google.auth.transport.requests import Request
@@ -139,7 +117,6 @@ def get_gsc_token():
         return None
 
 def submit_to_gsc(urls, token):
-    """Soumet les URLs à Google Search Console."""
     if not token:
         print("⚠️  Soumission GSC : token manquant")
         return []
@@ -162,7 +139,7 @@ def submit_to_gsc(urls, token):
 
 def main():
     print("=" * 80)
-    print(f"🎯 PIPELINE SCORE + TITRES OPTIMISÉS — {datetime.datetime.now().isoformat()}")
+    print(f"🎯 SCORE + PROPOSE — {datetime.datetime.now().isoformat()}")
     print("=" * 80)
 
     # Charge données
@@ -170,7 +147,7 @@ def main():
     gsc_data = load_json(GSC_FILE, {})
     proposed = load_proposed()
 
-    # Trouve et score les pages
+    # Score les pages
     pages_to_score = []
 
     if os.path.exists(PAGES_DIR):
@@ -179,29 +156,20 @@ def main():
                 html_content = f.read()
 
             original_title = extract_title_from_html(html_content)
-            h1 = extract_h1_from_html(html_content)
-
-            # URL de la page
             url = f"{SITE_BASE_URL}{html_file.name}"
 
-            # Trouve le meilleur keyword Google Ads
-            best_keyword, volume = find_best_matching_keyword(html_content, keywords)
-
-            # Génère titre optimisé
-            optimized_title, matched_volume = generate_optimized_title(original_title, best_keyword, volume)
-
             # Score
-            score = calculate_score(html_content, matched_volume, keywords, gsc_data, url in proposed)
+            score = calculate_score(html_content, keywords, gsc_data, url in proposed)
+
+            # Optimise titre
+            optimized_title = optimize_title(original_title)
 
             if url not in proposed:
                 pages_to_score.append({
                     "filename": html_file.name,
                     "url": url,
                     "original_title": original_title,
-                    "h1": h1,
                     "optimized_title": optimized_title,
-                    "keyword": best_keyword,
-                    "volume": matched_volume,
                     "score": score
                 })
 
@@ -213,9 +181,9 @@ def main():
     pages_to_score.sort(key=lambda x: -x["score"])
 
     print(f"\n🏊 Pages trouvées: {len(pages_to_score)}\n")
-    print("TOP 10 par score:\n")
+    print("TOP 10:\n")
     for i, page in enumerate(pages_to_score[:10], 1):
-        print(f"{i}. [{page['score']:>4.1f}⭐] {page['volume']:>4} vol | {page['optimized_title'][:50]}")
+        print(f"{i}. [{page['score']:>4.1f}⭐] {page['optimized_title'][:50]}")
 
     # TOP 5 à proposer
     to_propose = pages_to_score[:5]
@@ -227,10 +195,7 @@ def main():
     print(f"\n🎯 {len(to_propose)} PAGES À INDEXER :\n")
     for i, page in enumerate(to_propose, 1):
         print(f"{i}. ⭐ Score: {page['score']:.1f}/10")
-        print(f"   Titre optimisé: \"{page['optimized_title']}\"")
-        if page['keyword']:
-            print(f"   Keyword Google: \"{page['keyword']}\"")
-        print(f"   Volume: {page['volume']} recherches/mois")
+        print(f"   Titre: \"{page['optimized_title']}\"")
         print(f"   {page['url']}\n")
 
     # Soumets à Google
