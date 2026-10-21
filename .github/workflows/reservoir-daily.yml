@@ -49,10 +49,10 @@ jobs:
           exec(open('automation/scripts/keyword_planner_audiobook.py').read())
           EOF
 
-      - name: 2️⃣ Score + Titres Optimisés — pages générées + Google Ads + TOP 5
+      - name: 2️⃣ Score + Propose — pages générées + score + TOP 5 + Google
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
-        run: python3 automation/scripts/score_and_propose_with_optimized_titles.py
+        run: python3 automation/scripts/score_and_propose_pages.py
 
       - name: Commit & Push
         run: |
