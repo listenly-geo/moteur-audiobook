@@ -1,0 +1,36 @@
+name: GSC Pull — Données quotidiennes
+
+on:
+  schedule:
+    - cron: "15 6 * * *"  # 6h15 UTC chaque jour (8h15 Berlin)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  gsc-pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -q google-auth google-auth-httplib2 google-auth-oauthlib requests
+
+      - name: Pull GSC data
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 automation/scripts/gsc_analysis.py
+
+      - name: Commit & Push
+        run: |
+          git config user.name "gsc-bot"
+          git config user.email "actions@github.com"
+          git add data/gsc/
+          git diff --staged --quiet || (git commit -m "data: GSC pull $(date +%Y-%m-%d)" && git push)
