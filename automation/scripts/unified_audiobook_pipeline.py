@@ -72,22 +72,15 @@ def get_volume_for_question(question, keywords_data):
     return best_match
 
 def generate_optimized_title(question, guest_name, volume):
-    """Génère un titre optimisé SEO."""
-    # Format: "Auteur: question court + volume signal"
-    # Max 60 chars
+    """Génère un titre optimisé SEO = la question elle-même."""
+    # Titre = la question (autorité + expertise dans le contenu de la page)
 
-    guest_short = guest_name.split()[0] if guest_name else "Expert"
+    q_clean = question.strip()
+    # Ajoute ? si absent
+    if not q_clean.endswith("?"):
+        q_clean = q_clean + "?"
 
-    # Question nettoyée
-    q_clean = question.strip().rstrip("?").strip()
-    if len(q_clean) > 45:
-        q_clean = q_clean[:42] + "..."
-
-    title = f"{guest_short}: {q_clean}"
-    if len(title) > 60:
-        title = title[:57] + "..."
-
-    return title
+    return q_clean
 
 def calculate_score(question, volume, gsc_data, proposed):
     """Score question basé sur volume + audiobook relevance + GSC."""
