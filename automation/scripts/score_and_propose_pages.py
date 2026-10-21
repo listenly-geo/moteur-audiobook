@@ -49,14 +49,49 @@ def extract_title_from_html(html_content):
     match = re.search(r'<title>([^<]+)</title>', html_content)
     return match.group(1) if match else ""
 
-def optimize_title(original_title):
-    """Garde la question d'origine (déjà complète et naturelle), juste nettoyée :
-    entités HTML décodées, espace avant '?' retiré, un seul '?' final."""
+MAX_TITLE = 70  # au-dessus, on reformule
+
+def clean_title(t):
     import html
-    title = html.unescape(original_title).replace("\xa0", " ").strip()
-    title = re.sub(r"\s+", " ", title)
-    title = title.rstrip(" ?").strip() + "?"
-    return title
+    t = html.unescape(t).replace("\xa0", " ").strip()
+    t = re.sub(r"\s+", " ", t)
+    return t.rstrip(" ?").strip() + "?"
+
+def rewrite_title(title):
+    """Reformule (sans tronquer) une question trop longue en question Google courte et complète."""
+    key = os.environ.get("ANTHROPIC_API_KEY")
+    if not key:
+        return None
+    prompt = (
+        "Reformule cette question en une question courte, naturelle et complète, "
+        "telle qu'un auteur la taperait sur Google ou la poserait à ChatGPT.\n"
+        "Règles : même sujet et mots-clés principaux, 45 à 65 caractères, grammaticalement "
+        "complète, finit par '?', rien d'inventé, pas de 'et' qui enchaîne deux questions.\n"
+        "Réponds uniquement par la question.\n\n"
+        f"Question : {title}"
+    )
+    try:
+        r = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
+            json={"model": "claude-haiku-4-5-20251001", "max_tokens": 100,
+                  "messages": [{"role": "user", "content": prompt}]},
+            timeout=30,
+        )
+        r.raise_for_status()
+        out = clean_title(r.json()["content"][0]["text"].strip().strip('"'))
+        if 25 <= len(out) <= 75:
+            return out
+    except Exception as e:
+        print(f"⚠️  Reformulation : {str(e)[:80]}")
+    return None
+
+def optimize_title(original_title):
+    """Garde la question si elle est assez courte ; sinon la reformule (jamais de troncature)."""
+    title = clean_title(original_title)
+    if len(title) <= MAX_TITLE:
+        return title
+    return rewrite_title(title) or title
 
 def calculate_score(html_content, keywords_data, gsc_data, proposed_url):
     """Score simple: volume + audiobook + GSC."""
@@ -149,8 +184,7 @@ def main():
             # Score
             score = calculate_score(html_content, keywords, gsc_data, url in proposed)
 
-            # Optimise titre
-            optimized_title = optimize_title(original_title)
+            optimized_title = clean_title(original_title)
 
             if url not in proposed:
                 pages_to_score.append({
@@ -179,6 +213,9 @@ def main():
     if not to_propose:
         print("\n✅ Aucune nouvelle page pertinente.")
         return
+
+    for page in to_propose:
+        page["optimized_title"] = optimize_title(page["original_title"])
 
     print(f"\n🎯 {len(to_propose)} PAGES À INDEXER :\n")
     for i, page in enumerate(to_propose, 1):

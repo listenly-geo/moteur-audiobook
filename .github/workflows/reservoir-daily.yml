@@ -52,6 +52,7 @@ jobs:
       - name: 2️⃣ Score + Propose — pages générées + score + TOP 5 + Google
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 automation/scripts/score_and_propose_pages.py
 
       - name: Commit & Push
