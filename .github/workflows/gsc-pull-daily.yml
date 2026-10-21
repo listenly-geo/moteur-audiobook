@@ -2,7 +2,7 @@ name: GSC Pull — Données quotidiennes
 
 on:
   schedule:
-    - cron: "15 6 * * *"  # 6h15 UTC chaque jour (8h15 Berlin)
+    - cron: "15 11 * * *"  # 11h15 UTC chaque jour (13h15 Berlin)
   workflow_dispatch: {}
 
 permissions:

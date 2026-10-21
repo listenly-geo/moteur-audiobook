@@ -2,7 +2,7 @@ name: Title Optimization — Titres courts + data
 
 on:
   schedule:
-    - cron: "10 6 * * *"  # 6h10 UTC (après GSC pull à 6h)
+    - cron: "10 11 * * *"  # 11h10 UTC (13h10 Berlin, après GSC pull à 11h15)
   workflow_dispatch: {}
 
 permissions:
