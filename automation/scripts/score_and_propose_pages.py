@@ -50,14 +50,19 @@ def extract_title_from_html(html_content):
     return match.group(1) if match else ""
 
 def optimize_title(original_title):
-    """Optimise le titre selon les règles: raccourci 50-60 chars, avant quand/si/pour, +?"""
+    """Optimise le titre selon les règles:
+    - Tronque AVANT les mots de rupture: "et", "ou", "versus" (pas essentiels au sens)
+    - GARDE les mots contextuels: "pour", "quand", "si" (essentiels au sens)
+    - 50-60 chars max
+    - Termine par ?
+    """
 
     title = original_title.strip().rstrip("?").strip()
 
-    # Tronque avant les mots de liaison (cherche le premier)
-    truncate_words = [" et ", " quand ", " si ", " pour ", " en ", " versus ", " ou "]
+    # Mots de RUPTURE = on tronque avant (créent une 2e partie séparée)
+    rupture_words = [" et ", " ou ", " versus "]
     earliest_cut = len(title)
-    for word in truncate_words:
+    for word in rupture_words:
         pos = title.lower().find(word.lower())
         if pos != -1 and pos < earliest_cut:
             earliest_cut = pos
@@ -68,16 +73,17 @@ def optimize_title(original_title):
     # Ajoute ?
     title = title + "?"
 
-    # Si trop long (>60), tronque au dernier espace avant 60
+    # Si trop long (>60), tronque au dernier MOT COMPLET avant 60 chars
     if len(title) > 60:
-        truncated = title[:60]
-        # Cherche le dernier espace
-        last_space = truncated.rfind(" ")
-        if last_space > 40:  # Garde au minimum 40 chars
-            title = truncated[:last_space].strip() + "?"
+        # Cherche le dernier espace avant 60 (garde le mot complet)
+        last_space = title[:60].rfind(" ")
+        if last_space > 35:  # Garde au minimum 35 chars
+            # Garde le mot avant ce dernier espace
+            before_space = title[:last_space].rstrip()
+            title = before_space + "?"
         else:
-            # Sinon garde les 60 chars
-            title = truncated[:57].rstrip() + "?"
+            # Fallback: coupe après 55 chars et ajoute "?"
+            title = title[:55].rstrip() + "?"
 
     return title
 
