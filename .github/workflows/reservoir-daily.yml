@@ -1,0 +1,70 @@
+name: Réservoir Quotidien — Build + Score + Propose
+
+on:
+  schedule:
+    - cron: "0 11 * * *"  # 11h UTC (13h Berlin)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  reservoir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -q google-auth google-auth-httplib2 google-auth-oauthlib requests
+
+      - name: 1️⃣ Keyword Planner — récupère les volumes Google Ads
+        env:
+          GOOGLE_ADS_CLIENT_ID: ${{ secrets.GOOGLE_ADS_CLIENT_ID }}
+          GOOGLE_ADS_CLIENT_SECRET: ${{ secrets.GOOGLE_ADS_CLIENT_SECRET }}
+          GOOGLE_ADS_REFRESH_TOKEN: ${{ secrets.GOOGLE_ADS_REFRESH_TOKEN }}
+          GOOGLE_ADS_CUSTOMER_ID: ${{ secrets.GOOGLE_ADS_CUSTOMER_ID }}
+          GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+          GOOGLE_ADS_LOGIN_CUSTOMER_ID: ${{ secrets.GOOGLE_ADS_LOGIN_CUSTOMER_ID }}
+        run: |
+          python3 << 'EOF'
+          import json, sys
+          questions = [
+            "comment vivre de sa plume",
+            "comment transformer livre audiobook",
+            "droits auteur audiobook",
+            "publier son livre",
+            "négocier éditeur",
+            "revenu auteur",
+            "audiobook auto édition",
+            "vendre ses droits",
+            "contrat édition"
+          ]
+          sys.argv = ['keyword_planner_audiobook.py'] + questions
+          exec(open('automation/scripts/keyword_planner_audiobook.py').read())
+          EOF
+
+      - name: 2️⃣ Build Réservoir — toutes les questions avec volume
+        run: python3 automation/scripts/build_question_reservoir.py
+
+      - name: 3️⃣ Score Réservoir — évalue chaque question
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 automation/scripts/score_question_reservoir.py
+
+      - name: 4️⃣ Proposition TOP 5 — sélectionne + soumet à Google
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 automation/scripts/propose_fiches_final.py
+
+      - name: Commit & Push
+        run: |
+          git config user.name "reservoir-bot"
+          git config user.email "actions@github.com"
+          git add data/question_reservoir.json automation/state/proposed_history.json
+          git diff --staged --quiet || (git commit -m "data: réservoir quotidien $(date +%Y-%m-%d)" && git push)
