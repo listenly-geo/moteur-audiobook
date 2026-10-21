@@ -75,12 +75,29 @@ def generate_optimized_title(question, guest_name, volume):
     """Génère un titre optimisé SEO = la question elle-même."""
     # Titre = la question (autorité + expertise dans le contenu de la page)
 
-    q_clean = question.strip()
-    # Ajoute ? si absent
-    if not q_clean.endswith("?"):
-        q_clean = q_clean + "?"
+    q_clean = question.strip().rstrip("?").strip()
 
-    return q_clean
+    # Extrait le noyau de la question (avant "quand", "si", "pour", etc.)
+    truncate_words = [" quand ", " si ", " pour ", " en ", " versus ", " ou "]
+    for word in truncate_words:
+        if word.lower() in q_clean.lower():
+            q_clean = q_clean.split(word)[0].strip()
+            break
+
+    # Ajoute ? et assure 50-60 chars (format moteur-trafic)
+    title = q_clean + "?"
+
+    # Si trop court, remplace par la question complète (mieux pour SEO)
+    if len(title) < 35:
+        title = question.strip()
+        if not title.endswith("?"):
+            title = title + "?"
+
+    # Si trop long, tronque intelligemment
+    if len(title) > 60:
+        title = title[:57] + "?"
+
+    return title
 
 def calculate_score(question, volume, gsc_data, proposed):
     """Score question basé sur volume + audiobook relevance + GSC."""
