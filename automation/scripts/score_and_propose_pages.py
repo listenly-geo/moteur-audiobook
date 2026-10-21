@@ -54,19 +54,30 @@ def optimize_title(original_title):
 
     title = original_title.strip().rstrip("?").strip()
 
-    # Tronque avant les mots de liaison
-    truncate_words = [" quand ", " si ", " pour ", " en ", " versus ", " ou "]
+    # Tronque avant les mots de liaison (cherche le premier)
+    truncate_words = [" et ", " quand ", " si ", " pour ", " en ", " versus ", " ou "]
+    earliest_cut = len(title)
     for word in truncate_words:
-        if word.lower() in title.lower():
-            title = title.split(word)[0].strip()
-            break
+        pos = title.lower().find(word.lower())
+        if pos != -1 and pos < earliest_cut:
+            earliest_cut = pos
+
+    if earliest_cut < len(title):
+        title = title[:earliest_cut].strip()
 
     # Ajoute ?
     title = title + "?"
 
-    # Si trop long, tronque à 60 chars
+    # Si trop long (>60), tronque au dernier espace avant 60
     if len(title) > 60:
-        title = title[:57] + "?"
+        truncated = title[:60]
+        # Cherche le dernier espace
+        last_space = truncated.rfind(" ")
+        if last_space > 40:  # Garde au minimum 40 chars
+            title = truncated[:last_space].strip() + "?"
+        else:
+            # Sinon garde les 60 chars
+            title = truncated[:57].rstrip() + "?"
 
     return title
 
