@@ -1,53 +1,10 @@
 {
-  "statut": "connecte",
-  "date": "2026-10-21T12:00:00Z",
-  "graines": [
-    "comment vivre de sa plume",
-    "comment transformer livre audiobook",
-    "droits auteur audiobook",
-    "publier son livre",
-    "négocier éditeur"
-  ],
-  "idees": [
-    {
-      "requete": "comment transformer son livre en audiobook",
-      "volume_mensuel_moyen": 850,
-      "concurrence": "LOW"
-    },
-    {
-      "requete": "combien gagne un auteur avec audiobook",
-      "volume_mensuel_moyen": 620,
-      "concurrence": "LOW"
-    },
-    {
-      "requete": "comment vivre de la vente de livres",
-      "volume_mensuel_moyen": 480,
-      "concurrence": "MEDIUM"
-    },
-    {
-      "requete": "droits d'auteur audiobook rémunération",
-      "volume_mensuel_moyen": 340,
-      "concurrence": "LOW"
-    },
-    {
-      "requete": "comment publier un livre seul",
-      "volume_mensuel_moyen": 1200,
-      "concurrence": "HIGH"
-    },
-    {
-      "requete": "négocier contrat avec éditeur",
-      "volume_mensuel_moyen": 290,
-      "concurrence": "MEDIUM"
-    },
-    {
-      "requete": "vivre de son livre comment",
-      "volume_mensuel_moyen": 180,
-      "concurrence": "MEDIUM"
-    },
-    {
-      "requete": "audiobook auto édition revenu",
-      "volume_mensuel_moyen": 420,
-      "concurrence": "LOW"
-    }
-  ]
+ "statut": "non connecte",
+ "manque": [
+  "GOOGLE_ADS_CLIENT_ID",
+  "GOOGLE_ADS_CLIENT_SECRET",
+  "GOOGLE_ADS_REFRESH_TOKEN",
+  "GOOGLE_ADS_CUSTOMER_ID"
+ ],
+ "date": "2026-10-21T13:19Z"
 }
