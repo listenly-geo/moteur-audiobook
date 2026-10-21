@@ -39,10 +39,11 @@ def calculate_score(question, volume, gsc_data, proposed):
 
     # 3. GSC performance (si déjà indexée)
     gsc_score = 0
-    for page_data in gsc_data.values():
-        if page_data.get("clics", 0) > 0:
+    gsc_list = gsc_data if isinstance(gsc_data, list) else gsc_data.values()
+    for page_data in gsc_list:
+        if isinstance(page_data, dict) and page_data.get("clics", 0) > 0:
             gsc_score = 10  # Page qui performe
-        elif page_data.get("impressions", 0) > 0:
+        elif isinstance(page_data, dict) and page_data.get("impressions", 0) > 0:
             gsc_score = max(gsc_score, 5)  # Page vue
 
     # 4. Bonus si pas encore proposée
