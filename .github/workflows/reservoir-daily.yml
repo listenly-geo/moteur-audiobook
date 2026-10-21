@@ -49,14 +49,22 @@ jobs:
           exec(open('automation/scripts/keyword_planner_audiobook.py').read())
           EOF
 
-      - name: 2️⃣ Pipeline Unifiée — stock podcast + Google Ads + scoring + titres optimisés + Google
+      - name: 2️⃣ Pipeline Unifiée — stock podcast + Google Ads + scoring + titres optimisés
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: python3 automation/scripts/unified_audiobook_pipeline.py
+
+      - name: 3️⃣ Génération Pages HTML — crée pages des TOP 5 (expertise + SEO)
+        run: python3 automation/scripts/generate_html_from_stock.py
+
+      - name: 4️⃣ Soumission Google — propose TOP 5 à l'indexation
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python3 automation/scripts/propose_fiches_final.py
 
       - name: Commit & Push
         run: |
           git config user.name "reservoir-bot"
           git config user.email "actions@github.com"
-          git add data/keyword_planner.json automation/state/proposed_history.json
-          git diff --staged --quiet || (git commit -m "data: pipeline audiobook quotidienne $(date +%Y-%m-%d)" && git push)
+          git add data/keyword_planner.json automation/state/proposed_history.json pages/moteur-audiobook/
+          git diff --staged --quiet || (git commit -m "data: pipeline audiobook complète + pages + indexation $(date +%Y-%m-%d)" && git push)
