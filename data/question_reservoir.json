@@ -1,6 +1,6 @@
 [
   {
-    "question": "comment publier un livre seul",
+    "question": "comment publier un livre seul?",
     "volume_mensuel": 1200,
     "concurrence": "HIGH",
     "status": "pending",
@@ -9,43 +9,16 @@
     "last_scored": "2026-10-21"
   },
   {
-    "question": "comment transformer son livre en audiobook",
+    "question": "comment transformer son livre en audiobook?",
     "volume_mensuel": 850,
     "concurrence": "LOW",
     "status": "pending",
     "date_added": "2026-10-21",
-    "score": 10,
+    "score": 9.2,
     "last_scored": "2026-10-21"
   },
   {
-    "question": "combien gagne un auteur avec audiobook",
-    "volume_mensuel": 620,
-    "concurrence": "LOW",
-    "status": "pending",
-    "date_added": "2026-10-21",
-    "score": 10,
-    "last_scored": "2026-10-21"
-  },
-  {
-    "question": "comment vivre de la vente de livres",
-    "volume_mensuel": 480,
-    "concurrence": "MEDIUM",
-    "status": "pending",
-    "date_added": "2026-10-21",
-    "score": 9.4,
-    "last_scored": "2026-10-21"
-  },
-  {
-    "question": "audiobook auto édition revenu",
-    "volume_mensuel": 420,
-    "concurrence": "LOW",
-    "status": "pending",
-    "date_added": "2026-10-21",
-    "score": 9.1,
-    "last_scored": "2026-10-21"
-  },
-  {
-    "question": "droits d'auteur audiobook rémunération",
+    "question": "droits d'auteur audiobook rémunération?",
     "volume_mensuel": 340,
     "concurrence": "LOW",
     "status": "pending",
@@ -54,7 +27,16 @@
     "last_scored": "2026-10-21"
   },
   {
-    "question": "vivre de son livre comment",
+    "question": "combien gagne un auteur avec audiobook?",
+    "volume_mensuel": 620,
+    "concurrence": "LOW",
+    "status": "pending",
+    "date_added": "2026-10-21",
+    "score": 8.1,
+    "last_scored": "2026-10-21"
+  },
+  {
+    "question": "vivre de son livre comment?",
     "volume_mensuel": 180,
     "concurrence": "MEDIUM",
     "status": "pending",
@@ -63,7 +45,25 @@
     "last_scored": "2026-10-21"
   },
   {
-    "question": "négocier contrat avec éditeur",
+    "question": "comment vivre de la vente de livres?",
+    "volume_mensuel": 480,
+    "concurrence": "MEDIUM",
+    "status": "pending",
+    "date_added": "2026-10-21",
+    "score": 7.4,
+    "last_scored": "2026-10-21"
+  },
+  {
+    "question": "audiobook auto édition revenu?",
+    "volume_mensuel": 420,
+    "concurrence": "LOW",
+    "status": "pending",
+    "date_added": "2026-10-21",
+    "score": 7.1,
+    "last_scored": "2026-10-21"
+  },
+  {
+    "question": "négocier contrat avec éditeur?",
     "volume_mensuel": 290,
     "concurrence": "MEDIUM",
     "status": "pending",

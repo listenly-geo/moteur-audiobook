@@ -43,6 +43,10 @@ def main():
         concurrence = idea.get("concurrence", "UNSPECIFIED")
 
         if requete and volume > 0:  # Seulement les questions avec du volume
+            # Ajoute ? à la fin si absent
+            if not requete.endswith("?"):
+                requete = requete + "?"
+
             reservoir.append({
                 "question": requete,
                 "volume_mensuel": volume,

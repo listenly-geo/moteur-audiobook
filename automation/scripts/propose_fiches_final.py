@@ -87,13 +87,16 @@ def main():
         score = q_data.get("score", 0)
         volume = q_data.get("volume_mensuel", 0)
 
-        # URL slugifiée
+        # URL slugifiée (garde le ? pour le titre, le supprime pour l'URL)
         slug = question.lower().replace(" ", "-").replace("?", "").replace("'", "")[:60]
         url = f"{SITE_BASE_URL}{slug}.html"
 
+        # Titre avec ?
+        title_with_question = question if question.endswith("?") else question + "?"
+
         if url not in proposed:  # Non encore proposée
             candidates.append({
-                "question": question,
+                "question": title_with_question,  # AVEC ?
                 "url": url,
                 "volume": volume,
                 "score": score

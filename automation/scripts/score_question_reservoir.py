@@ -69,7 +69,11 @@ def main():
 
     # Score chaque question
     for q in reservoir:
-        url = f"https://audiobooklab.fr/blog-audiobook/{q['question'].lower().replace(' ', '-')[:60]}.html"
+        # Ajoute le ? si absent
+        if not q["question"].endswith("?"):
+            q["question"] = q["question"] + "?"
+
+        url = f"https://audiobooklab.fr/blog-audiobook/{q['question'].lower().replace(' ', '-').replace('?', '')[:60]}.html"
         already_proposed = url in proposed
 
         q["score"] = calculate_score(q["question"], q["volume_mensuel"], gsc_data, already_proposed)
