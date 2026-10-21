@@ -1,15 +1,15 @@
-name: GSC Analysis - Analyse quotidienne audiobook
+name: Pipeline UNIFIÉE - Analyse → Scoring → Proposition
 
 on:
   schedule:
-    - cron: "0 7 * * *"  # 7h UTC chaque jour (9h Berlin)
+    - cron: "30 6 * * *"  # 6h30 UTC chaque jour (8h30 Berlin)
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 jobs:
-  analyze:
+  unified:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,14 +23,14 @@ jobs:
       - name: Install dependencies
         run: pip install google-auth google-auth-httplib2 google-auth-oauthlib requests
 
-      - name: Run GSC analysis
+      - name: Run unified pipeline
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
-        run: python3 automation/scripts/gsc_analysis.py
+        run: python3 automation/scripts/propose_fiches_unified.py
 
       - name: Commit results
         run: |
-          git config user.name "gsc-analysis-bot"
+          git config user.name "pipeline-bot"
           git config user.email "actions@github.com"
-          git add data/gsc/
-          git diff --staged --quiet && echo "Rien de nouveau" || (git commit -m "chore: analyse GSC quotidienne $(date +%Y-%m-%d)" && git push)
+          git add data/ automation/state/
+          git diff --staged --quiet && echo "Rien de nouveau" || (git commit -m "chore: pipeline unifiée $(date +%Y-%m-%d) - analyse GSC → scoring → proposition" && git push)
