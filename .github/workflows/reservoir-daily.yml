@@ -49,22 +49,14 @@ jobs:
           exec(open('automation/scripts/keyword_planner_audiobook.py').read())
           EOF
 
-      - name: 2️⃣ Build Réservoir — toutes les questions avec volume
-        run: python3 automation/scripts/build_question_reservoir.py
-
-      - name: 3️⃣ Score Réservoir — évalue chaque question
+      - name: 2️⃣ Pipeline Unifiée — stock podcast + Google Ads + scoring + titres optimisés + Google
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
-        run: python3 automation/scripts/score_question_reservoir.py
-
-      - name: 4️⃣ Proposition TOP 5 — sélectionne + soumet à Google
-        env:
-          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
-        run: python3 automation/scripts/propose_fiches_final.py
+        run: python3 automation/scripts/unified_audiobook_pipeline.py
 
       - name: Commit & Push
         run: |
           git config user.name "reservoir-bot"
           git config user.email "actions@github.com"
-          git add data/question_reservoir.json automation/state/proposed_history.json
-          git diff --staged --quiet || (git commit -m "data: réservoir quotidien $(date +%Y-%m-%d)" && git push)
+          git add data/keyword_planner.json automation/state/proposed_history.json
+          git diff --staged --quiet || (git commit -m "data: pipeline audiobook quotidienne $(date +%Y-%m-%d)" && git push)
