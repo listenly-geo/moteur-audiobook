@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Proposition quotidienne des 5 meilleures fiches audiobook.
+Proposition quotidienne des 5 meilleures fiches audiobook + soumission Google Search Console.
 
 Combine:
   1. optimized_titles.json (titre + pertinence audiobook)
@@ -8,16 +8,21 @@ Combine:
   3. proposed_history.json (déjà proposées?)
 
 Scoring final = (titre_score * 0.4) + (volume_score * 0.3) + (audiobook_relevance * 0.3)
-Top 5 = proposées à l'indexation → envoyées à Google Search Console
+Top 5 = proposées à l'indexation → envoyées à Google Search Console via URL Inspection API
 
-Output: rapport + update proposed_history.json
+Secrets requis:
+  GSC_SERVICE_ACCOUNT_JSON (pour URL Inspection API)
+
+Output: rapport + update proposed_history.json + soumission Google
 """
-import os, json, datetime
+import os, json, datetime, requests
 
 TITLES_FILE = "data/optimized_titles.json"
 KEYWORD_FILE = "data/keyword_planner.json"
 PROPOSED_HISTORY_FILE = "automation/state/proposed_history.json"
 SITE_BASE_URL = "https://audiobooklab.fr/blog-audiobook/"
+SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+GSC_SITE = "sc-domain:audiobooklab.fr"
 
 def load_json(path, default=None):
     if not os.path.exists(path):
@@ -38,6 +43,44 @@ def save_proposed(proposed_set):
     os.makedirs(os.path.dirname(PROPOSED_HISTORY_FILE), exist_ok=True)
     with open(PROPOSED_HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(sorted(list(proposed_set)), f, ensure_ascii=False, indent=2)
+
+def get_gsc_token():
+    """Génère un token OAuth2 pour Google Search Console."""
+    try:
+        from google.oauth2 import service_account
+        from google.auth.transport.requests import Request
+        info = json.loads(os.environ.get("GSC_SERVICE_ACCOUNT_JSON", "{}"))
+        creds = service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
+        creds.refresh(Request())
+        return creds.token
+    except Exception as e:
+        print(f"⚠️  Token GSC : {str(e)[:100]}")
+        return None
+
+def submit_to_gsc(urls, token):
+    """Soumet les URLs à Google Search Console (URL Inspection API)."""
+    if not token:
+        print("⚠️  Soumission GSC : token manquant")
+        return []
+
+    submitted = []
+    for url in urls:
+        try:
+            # URL Inspection API = demande Google d'indexer
+            api_url = f"https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
+            body = {"inspectionUrl": url}
+            headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
+            r = requests.post(api_url, json=body, headers=headers, timeout=30)
+            if r.status_code == 200:
+                submitted.append(url)
+                print(f"  ✅ {url}")
+            else:
+                print(f"  ⚠️  {url} : code {r.status_code}")
+        except Exception as e:
+            print(f"  ⚠️  {url} : {str(e)[:50]}")
+
+    return submitted
 
 def calculate_final_score(title_data, volume):
     """Calcule le score final = titre + volume + audiobook relevance."""
@@ -111,12 +154,19 @@ def main():
         print(f"   Volume: {fiche['volume']} recherches/mois")
         print(f"   {fiche['url']}\n")
 
+    # Soumettre à Google Search Console
+    print("📤 Soumission à Google Search Console...\n")
+    urls = [fiche["url"] for fiche in to_propose]
+    token = get_gsc_token()
+    submitted = submit_to_gsc(urls, token)
+    print(f"\n✅ {len(submitted)}/{len(urls)} soumises à Google")
+
     # Marquer comme proposées
     for fiche in to_propose:
         proposed.add(fiche["url"])
     save_proposed(proposed)
 
-    print(f"📊 Total proposées (historique): {len(proposed)}")
+    print(f"\n📊 Total proposées (historique): {len(proposed)}")
     print(f"\n🔍 Google Search Console: https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Aaudiobooklab.fr")
 
 if __name__ == "__main__":
