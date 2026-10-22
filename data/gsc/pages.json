@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 37,
-    "impressions": 134,
-    "ctr": 0.2761,
-    "position": 11.6
+    "clics": 38,
+    "impressions": 136,
+    "ctr": 0.2794,
+    "position": 11.7
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -58,9 +58,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-preparer-un-entretien-litteraire-en-profondeur-sans-se-noyer-dans-la-doc.html",
     "clics": 0,
-    "impressions": 3,
+    "impressions": 4,
     "ctr": 0,
-    "position": 4
+    "position": 4.5
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-savoir-si-on-a-vraiment-quelque-chose-a-raconter-avant-de-se-lancer-dans.html",
@@ -93,9 +93,9 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 17,
+    "impressions": 18,
     "ctr": 0,
-    "position": 1.4
+    "position": 1.8
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
