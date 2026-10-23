@@ -1,17 +1,17 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 38,
-    "impressions": 136,
-    "ctr": 0.2794,
-    "position": 11.7
+    "clics": 39,
+    "impressions": 138,
+    "ctr": 0.2826,
+    "position": 11.8
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
     "clics": 3,
-    "impressions": 8,
-    "ctr": 0.375,
-    "position": 4.8
+    "impressions": 9,
+    "ctr": 0.3333,
+    "position": 4.7
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -93,16 +93,16 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 18,
+    "impressions": 19,
     "ctr": 0,
-    "position": 1.8
+    "position": 1.7
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 41,
+    "impressions": 42,
     "ctr": 0,
-    "position": 7.4
+    "position": 7.2
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
