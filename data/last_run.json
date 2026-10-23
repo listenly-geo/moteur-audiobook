@@ -1,41 +1,41 @@
 {
-  "date": "2026-10-22T15:47:28.113739",
+  "date": "2026-10-23T12:26:58.744292",
   "sitemap": 204,
   "pages": [
     {
-      "titre": "Comment définir mon univers littéraire en un mot?",
-      "titre_original": "Comment définir mon univers littéraire en un seul mot, et comment éviter les faux-semblants ?",
+      "titre": "Comment vaincre la paralysie grammaticale à l'écrit?",
+      "titre_original": "Comment enseigner l'écriture à des élèves paralysés par les normes grammaticales ?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/comment-definir-mon-univers-litteraire-en-un-seul-mot-et-comment-eviter-les-faux.html",
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-enseigner-lecriture-a-des-eleves-paralyses-par-les-normes-grammaticales.html",
+      "google": "Google ne reconnaît pas cette URL"
+    },
+    {
+      "titre": "Comment autofinancer ses recherches philosophiques?",
+      "titre_original": "Comment financer ses recherches de terrain sans dépendre de bourses ou de mécènes quand on est philosophe ?",
+      "score": 6.5,
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-financer-ses-recherches-de-terrain-sans-dependre-de-bourses-ou-de-mecene.html",
+      "google": "Détectée, actuellement non indexée"
+    },
+    {
+      "titre": "Comment garantir la rigueur scientifique d'un essai philosophique?",
+      "titre_original": "Comment garantir la rigueur scientifique d'un essai de philosophie sur des sujets techniques comme l'écologie ou la préhistoire ?",
+      "score": 6.5,
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-garantir-la-rigueur-scientifique-dun-essai-de-philosophie-sur-des-sujets.html",
+      "google": "Google ne reconnaît pas cette URL"
+    },
+    {
+      "titre": "Comment gérer plusieurs lignes narratives entremêlées?",
+      "titre_original": "Comment gérer la complexité d'un récit à plusieurs lignes narratives entremêlées sans perdre le fil&nbsp;?",
+      "score": 6.5,
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-la-complexite-dun-recit-a-plusieurs-lignes-narratives-entremelees.html",
       "google": "Envoyée et indexée"
     },
     {
-      "titre": "Comment justifier l'utilité de l'écriture philosophique?",
-      "titre_original": "Comment dépasser la crise de sens du philosophe ou de l'intellectuel qui doute de l'utilité de son travail d'écriture&nbsp;?",
+      "titre": "Comment gérer le trac lors de représentations théâtrales?",
+      "titre_original": "Comment gérer la peur et l'effroi face à ses propres textes lors des représentations ?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/comment-depasser-la-crise-de-sens-du-philosophe-ou-de-lintellectuel-qui-doute-de.html",
-      "google": "Détectée, actuellement non indexée"
-    },
-    {
-      "titre": "Comment couvrir l'actualité sans tomber dans le journalisme romancé?",
-      "titre_original": "Comment écrire sur l'actualité brûlante sans tomber dans le journalisme ou le reportage romancé ?",
-      "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/comment-ecrire-sur-lactualite-brulante-sans-tomber-dans-le-journalisme-ou-le-rep.html",
-      "google": "Google ne reconnaît pas cette URL"
-    },
-    {
-      "titre": "Comment écrire son premier livre entre essai et expérimentation?",
-      "titre_original": "Comment écrire un premier livre entre essai universitaire et expérimentation formelle sans se perdre ?",
-      "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/comment-ecrire-un-premier-livre-entre-essai-universitaire-et-experimentation-for.html",
-      "google": "Google ne reconnaît pas cette URL"
-    },
-    {
-      "titre": "Comment créer une histoire muette en bande dessinée?",
-      "titre_original": "Comment écrire une histoire muette sans scénario écrit : comment procèdent les auteurs de BD sans texte ?",
-      "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/comment-ecrire-une-histoire-muette-sans-scenario-ecrit-comment-procedent-les-aut.html",
-      "google": "Détectée, actuellement non indexée"
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-la-peur-et-leffroi-face-a-ses-propres-textes-lors-des-representati.html",
+      "google": "Envoyée et indexée"
     }
   ]
 }
