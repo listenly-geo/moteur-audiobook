@@ -1,9 +1,9 @@
 [
   {
     "requete": "audiobooklab",
-    "clics": 24,
-    "impressions": 46,
-    "ctr": 0.5217,
+    "clics": 23,
+    "impressions": 45,
+    "ctr": 0.5111,
     "position": 2.6
   },
   {
@@ -23,9 +23,9 @@
   {
     "requete": "audio book lab",
     "clics": 1,
-    "impressions": 3,
-    "ctr": 0.3333,
-    "position": 4.3
+    "impressions": 2,
+    "ctr": 0.5,
+    "position": 2
   },
   {
     "requete": "audio books lab",
