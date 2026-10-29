@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 39,
-    "impressions": 136,
-    "ctr": 0.2868,
-    "position": 11.9
+    "clics": 38,
+    "impressions": 135,
+    "ctr": 0.2815,
+    "position": 11.6
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -51,9 +51,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-la-complexite-dun-recit-a-plusieurs-lignes-narratives-entremelees.html",
     "clics": 0,
-    "impressions": 5,
+    "impressions": 7,
     "ctr": 0,
-    "position": 7.8
+    "position": 8.4
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-labsence-de-reconnaissance-familiale-quand-on-devient-ecrivain-et.html",
@@ -170,16 +170,16 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 22,
+    "impressions": 23,
     "ctr": 0,
-    "position": 2
+    "position": 2.0
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 38,
+    "impressions": 37,
     "ctr": 0,
-    "position": 7.5
+    "position": 7.7
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
@@ -191,9 +191,9 @@
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 24,
+    "impressions": 22,
     "ctr": 0,
-    "position": 2.6
+    "position": 2.7
   },
   {
     "url": "https://www.audiobooklab.fr/terms-and-conditions/",
