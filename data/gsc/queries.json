@@ -1,10 +1,10 @@
 [
   {
     "requete": "audiobooklab",
-    "clics": 21,
-    "impressions": 43,
-    "ctr": 0.4884,
-    "position": 2.5
+    "clics": 20,
+    "impressions": 41,
+    "ctr": 0.4878,
+    "position": 2.4
   },
   {
     "requete": "audiobooklabs",
@@ -44,16 +44,16 @@
   {
     "requete": "audiobook lab",
     "clics": 1,
-    "impressions": 11,
-    "ctr": 0.0909,
-    "position": 29.3
+    "impressions": 12,
+    "ctr": 0.0833,
+    "position": 27.2
   },
   {
     "requete": "audiobooks lab",
     "clics": 1,
-    "impressions": 3,
-    "ctr": 0.3333,
-    "position": 15
+    "impressions": 2,
+    "ctr": 0.5,
+    "position": 5
   },
   {
     "requete": "audiobooks labs",
