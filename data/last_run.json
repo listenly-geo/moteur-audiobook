@@ -1,40 +1,40 @@
 {
-  "date": "2026-11-03T08:29:07.958827",
+  "date": "2026-11-03T18:14:14.417467",
   "sitemap": 204,
   "pages": [
     {
-      "titre": "Comment appliquer la discipline d'écriture quotidienne de Stephen King?",
-      "titre_original": "Peut-on vraiment écrire en suivant une discipline quotidienne imposée comme celle que preconise Stephen King ?",
+      "titre": "Comment bien structurer un roman?",
+      "titre_original": "Comment structurer un roman pour qu'il fonctionne vraiment et ne pas se contenter d'une bonne idée ?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/peut-on-vraiment-ecrire-en-suivant-une-discipline-quotidienne-imposee-comme-cell.html",
-      "google": "Détectée, actuellement non indexée"
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-structurer-un-roman-pour-quil-fonctionne-vraiment-et-ne-pas-se-contenter.html",
+      "google": "Google ne reconnaît pas cette URL"
     },
     {
-      "titre": "Pourquoi faire mourir un personnage plutôt que le sauver?",
-      "titre_original": "Pourquoi choisir de laisser mourir son personnage plutôt que de le sauver in extremis ?",
+      "titre": "Pourquoi détruire son travail au lieu de le ranger?",
+      "titre_original": "Pourquoi détruire deux années de travail plutôt que de le ranger en tiroir ?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-choisir-de-laisser-mourir-son-personnage-plutot-que-de-le-sauver-in-ext.html",
-      "google": "Détectée, actuellement non indexée"
+      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-detruire-deux-annees-de-travail-plutot-que-de-le-ranger-en-tiroir.html",
+      "google": "Google ne reconnaît pas cette URL"
     },
     {
-      "titre": "Pourquoi choisir un pseudonyme et comment décider lequel?",
-      "titre_original": "Pourquoi choisir un pseudonyme et comment décider lequel&nbsp;?",
+      "titre": "Pourquoi écrire au présent de l'indicatif?",
+      "titre_original": "Pourquoi écrire au présent de l'indicatif et en quoi ça change tout pour le lecteur&nbsp;?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-choisir-un-pseudonyme-et-comment-decider-lequel.html",
-      "google": "Envoyée et indexée"
-    },
-    {
-      "titre": "Pourquoi écrire un livre critique sur une actrice plutôt qu'un cinéaste?",
-      "titre_original": "Pourquoi choisir une actrice plutôt qu'un cinéaste comme sujet de livre critique ?",
-      "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-choisir-une-actrice-plutot-quun-cineaste-comme-sujet-de-livre-critique.html",
+      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-ecrire-au-present-de-lindicatif-et-en-quoi-ca-change-tout-pour-le-lecte.html",
       "google": "Explorée, actuellement non indexée"
     },
     {
-      "titre": "Pourquoi privilégier l'écriture particulière plutôt que l'universel?",
-      "titre_original": "Pourquoi défendre l'écriture du particulier plutôt que de chercher l'universel ?",
+      "titre": "Pourquoi le journalisme semblait un camouflage?",
+      "titre_original": "Pourquoi le journalisme m'a-t-il semblé un métier camouflage plutôt qu'une véritable vocation?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-defendre-lecriture-du-particulier-plutot-que-de-chercher-luniversel.html",
+      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-le-journalisme-ma-t-il-semble-un-metier-camouflage-plutot-quune-veritab.html",
+      "google": "Détectée, actuellement non indexée"
+    },
+    {
+      "titre": "Pourquoi les personnages méchants sont-ils plus intéressants à écrire?",
+      "titre_original": "Pourquoi les personnages 'méchants' ou marginaux sont-ils plus intéressants à écrire que les héros lisses ?",
+      "score": 6.5,
+      "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-les-personnages-mechants-ou-marginaux-sont-ils-plus-interessants-a-ecri.html",
       "google": "Envoyée et indexée"
     }
   ]
