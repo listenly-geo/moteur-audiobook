@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "episode_title": "Mona Chollet : une workaholic plus très anonyme (3/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste et essayiste, chef d'édition au Monde Diplomatique de 2007 à 2022, Mona Chollet a démissionné de son poste salarié après le succès de ses livres. Elle est l'auteure de plusieurs essais remarqués dont Sorcière (2020) et Résister à la culpabilisation (2024), publiés aux éditions La Découverte.",
+    "question": {
+      "question": "Comment maintenir sa productivité d'écriture sans basculer dans le workaholisme qui détruit la vie personnelle et relationnelle ?",
+      "reponse_brute": "Chollet reconnaît être une stakhanoviste affublée d'une façade d'hédoniste. Elle est incapable de savourer sans arrière-pensée les moments avec ses proches, perçoit une conversation amicale comme un contre-temps, et sacrifie l'amour et les amitiés à la productivité. Elle priorise l'ajout de paragraphes au texte sur la vie elle-même, admettant que son devoir ressenti est d'être productive plutôt que vivante.",
+      "citation": "Je suis persuadée que mon devoir est d'être productive. Pas d'être vivante. Une conversation téléphonique improvisée avec une amie me remplit de scrupules, elle me contrarie légèrement. Elle m'apparaît comme un contre-temps, un obstacle sur le chemin de la productivité parfaite et continue."
+    },
+    "slug": "comment-maintenir-sa-productivite-decriture-sans-basculer-dans-le-workaholisme-q"
+  },
+  {
+    "episode_title": "Mona Chollet : une workaholic plus très anonyme (3/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste et essayiste, chef d'édition au Monde Diplomatique de 2007 à 2022, Mona Chollet a démissionné de son poste salarié après le succès de ses livres. Elle est l'auteure de plusieurs essais remarqués dont Sorcière (2020) et Résister à la culpabilisation (2024), publiés aux éditions La Découverte.",
+    "question": {
+      "question": "Quel rôle l'éditeur doit-il jouer après un succès critique pour éviter la complaisance éditorialeface au manuscrit ?",
+      "reponse_brute": "Après le succès de Sorcière, le risque majeur est que tout éditeur dise « c'est formidable » sans critique constructive. Grégoire Chamaillou, son éditeur depuis 17 ans, ne cède pas à cette tentation. Il combine bienveillance et sévérité, énonce des critiques difficiles de manière enrobée, et n'a aucun enjeu de pouvoir : il cherche uniquement le bien du livre. C'est cette relation de confiance totale qui protège l'écrivain de la mortification éditoriale.",
+      "citation": "Il n'y a pas d'enjeu de pouvoir, il a en tête le bien du livre et le résultat final. Il n'est pas plus mortifère pour l'écriture [que tout le monde ne vous dise c'est formidable]. Oui, c'est affreux, c'est atroce."
+    },
+    "slug": "quel-role-lediteur-doit-il-jouer-apres-un-succes-critique-pour-eviter-la-complai"
+  },
+  {
+    "episode_title": "Mona Chollet : une workaholic plus très anonyme (3/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste et essayiste, chef d'édition au Monde Diplomatique de 2007 à 2022, Mona Chollet a démissionné de son poste salarié après le succès de ses livres. Elle est l'auteure de plusieurs essais remarqués dont Sorcière (2020) et Résister à la culpabilisation (2024), publiés aux éditions La Découverte.",
+    "question": {
+      "question": "Comment négocier juste son contrat et ses droits sans être exploitée dans l'industrie du livre ?",
+      "reponse_brute": "Chollet n'a longtemps pas négocié du tout, acceptant 3 000 euros pour ses premiers livres. Elle ignorait totalement ses droits et valeur marchande. L'arrivée d'une agente (Ariane Jeffard) a transformé sa situation : celle-ci l'a sauvée d'un projet à 3 000 euros après Sorcière. L'agente prend 10% mais connaît le marché, négocie directement avec les éditeurs, et crée une juste distance. Chollet souligne que les intérêts des auteurs et des éditeurs sont opposés, contrairement au discours éditorial.",
+      "citation": "Je sais écrire des livres, mais je ne sais pas du tout négocier, savoir ce qui est juste, ce que je peux demander. Ariane m'a un peu récupérée par les bretelles quand on s'est rencontrées, parce que j'avais accepté un projet... après Sorcière... il m'avait proposé un avaloir de 3000 euros je crois et j'allais signer le contrat."
+    },
+    "slug": "comment-negocier-juste-son-contrat-et-ses-droits-sans-etre-exploitee-dans-lindus"
+  },
+  {
+    "episode_title": "Mona Chollet : une workaholic plus très anonyme (3/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste et essayiste, chef d'édition au Monde Diplomatique de 2007 à 2022, Mona Chollet a démissionné de son poste salarié après le succès de ses livres. Elle est l'auteure de plusieurs essais remarqués dont Sorcière (2020) et Résister à la culpabilisation (2024), publiés aux éditions La Découverte.",
+    "question": {
+      "question": "À quel moment et rythme l'écriture devient-elle viable financièrement pour quitter le salariat ?",
+      "reponse_brute": "L'avancée des honoraires de Chollet montre la courbe : 3-4 000 euros pour Sorcière (2020), puis 30-40 000 euros pour Réinventer l'amour (2022) suite au carton commercial, puis 50 000 euros pour Résister à la culpabilisation (2024). Elle a démissionné il y a deux ans (2022), après le succès de Sorcière qui a justifié les nouveaux contrats. La reconnaissance critique permet la rémunération qui rend le salariat dispensable.",
+      "citation": "Toujours du même ordre, ça devait être 3-4 000 euros [pour Sorcière]. C'était beaucoup plus, 30 000 ou 40 000 euros [pour Réinventer l'amour]. Ce qui est beaucoup. Oui, c'est beaucoup."
+    },
+    "slug": "a-quel-moment-et-rythme-lecriture-devient-elle-viable-financierement-pour-quitte"
+  },
+  {
+    "episode_title": "Mona Chollet : une workaholic plus très anonyme (3/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste et essayiste, chef d'édition au Monde Diplomatique de 2007 à 2022, Mona Chollet a démissionné de son poste salarié après le succès de ses livres. Elle est l'auteure de plusieurs essais remarqués dont Sorcière (2020) et Résister à la culpabilisation (2024), publiés aux éditions La Découverte.",
+    "question": {
+      "question": "Comment travailler quand on écrit des essais féministes alors que le lectorat ne suit pas ?",
+      "reponse_brute": "Le lectorat féminin domine massivement : Chollet compte trois hommes lecteurs chez elle pour environ cinquante femmes. Elle cite une étude montrant que les catégories dominées lisent les œuvres des catégories dominantes, mais l'inverse est très peu vrai. Elle reconnaît aussi que quand des hommes la lisent, ce n'est pas toujours à bon escient—la pancarte féministe « Il lit Mona Chollet mais jamais il ferme sa gueule » résume ce problème. C'est une limite structurelle de la portée politique du livre féministe.",
+      "citation": "Les personnes noires lisent des auteurs blancs et l'inverse est très peu vrai. Et probablement que moi aussi, je ne lis pas beaucoup d'auteurs noirs. Il y a une pancarte qu'on a vue beaucoup dans les manifs qui disait « Il lit Mona Chollet mais jamais il ferme sa gueule ». J'ai beaucoup aimé cette pancarte."
+    },
+    "slug": "comment-travailler-quand-on-ecrit-des-essais-feministes-alors-que-le-lectorat-ne"
+  },
+  {
+    "episode_title": "Mona Chollet : notre sorcière bien-aimée (2/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste suisse romande et essayiste, auteure de plusieurs ouvrages sur le féminisme et la critique des systèmes de domination. Son livre Sorcière, la puissance invaincue des femmes (2018) est devenu un phénomène de librairie vendu à 380 000 exemplaires en 15 langues, explorant les chasses aux sorcières du XVe au XVIIe siècle comme crime de masse misogyne.",
+    "question": {
+      "question": "Pourquoi utiliser aussi systématiquement des citations plutôt que d'écrire directement à partir de sa propre expérience ?",
+      "reponse_brute": "Chollet reconnaît avoir d'abord utilisé les citations comme protection, manquant de légitimité et de confiance en elle. Elle a progressivement trouvé un équilibre entre sa voix et celle des autres. Elle compare son travail à celui d'un jardinier qui greffe et cultive, héritant du savoir-faire de générations précédentes d'écrivains. Certains lui reprochent de faire des best-sellers à partir du travail des autres, mais elle reçoit aussi des retours positifs indiquant qu'elle donne envie de lire les auteurs qu'elle cite.",
+      "citation": "Au départ, je pense que je me suis beaucoup cachée derrière les personnes que je citais parce que je n'osais pas assumer moi-même des propos. Je ne me sentais pas légitime, je ne me sentais pas compétente. Aujourd'hui je l'assume et j'en suis même plutôt assez contente."
+    },
+    "slug": "pourquoi-utiliser-aussi-systematiquement-des-citations-plutot-que-decrire-direct"
+  },
+  {
+    "episode_title": "Mona Chollet : notre sorcière bien-aimée (2/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste suisse romande et essayiste, auteure de plusieurs ouvrages sur le féminisme et la critique des systèmes de domination. Son livre Sorcière, la puissance invaincue des femmes (2018) est devenu un phénomène de librairie vendu à 380 000 exemplaires en 15 langues, explorant les chasses aux sorcières du XVe au XVIIe siècle comme crime de masse misogyne.",
+    "question": {
+      "question": "Pourquoi refuser de faire du terrain journalistique, d'entretiens directs, alors qu'on pourrait enrichir son essai par du matériel vivant inédit ?",
+      "reponse_brute": "Chollet reconnaît ne pas avoir interrogé les activistes du Witch-block qui incarnaient pourtant son sujet Sorcière, ni filmmakers L'Amour flou pour vérifier l'issue de leur sépartement. Elle justifie ce choix en disant que les entretiens représentent un travail journalistique différent, qui ne cadre pas avec sa conception de l'essai. Elle intègre plutôt des conversations fugaces avec son entourage. Elle admet que cela pourrait être lié à son côté très légèrement asocial et à sa nature de casanière.",
+      "citation": "J'ai l'impression que c'est un autre genre de travail j'ai l'impression que c'est un c'est vrai que je pourrais le faire c'est plus un travail de journaliste ce que vous êtes par ailleurs oui ce que je suis mais dans l'écriture d'un essai j'ai l'impression que ça ça cadre pas."
+    },
+    "slug": "pourquoi-refuser-de-faire-du-terrain-journalistique-dentretiens-directs-alors-qu"
+  },
+  {
+    "episode_title": "Mona Chollet : notre sorcière bien-aimée (2/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste suisse romande et essayiste, auteure de plusieurs ouvrages sur le féminisme et la critique des systèmes de domination. Son livre Sorcière, la puissance invaincue des femmes (2018) est devenu un phénomène de librairie vendu à 380 000 exemplaires en 15 langues, explorant les chasses aux sorcières du XVe au XVIIe siècle comme crime de masse misogyne.",
+    "question": {
+      "question": "Comment gérer son propre besoin d'écrire de la fiction, en tant qu'essayiste dominant le marché ?",
+      "reponse_brute": "Chollet a écrit un roman il y a 15 ans qu'elle a rangé au tiroir après un retour critique mitigé. Elle a aussi écrit une version intello de '50 nuances de greys' sans intention de publier. Elle constate que la fiction offre une ivresse et une exploration plus sensuelle, incarnée, mais ses tentatives récentes restent inachevées. Elle accumule des débuts de romans et reconnaît avoir régulièrement des désirs de fiction, particulièrement une tentative actuelle qu'elle espère continuer sans nécessairement terminer.",
+      "citation": "Il y a une ivresse très grande dans la fiction. Il y a quelque chose aussi de plus concret, de plus sensuel dans le genre d'exploration qu'on peut faire par l'écriture, en imaginant des histoires, des personnages, des lieux."
+    },
+    "slug": "comment-gerer-son-propre-besoin-decrire-de-la-fiction-en-tant-quessayiste-domina"
+  },
+  {
+    "episode_title": "Mona Chollet : notre sorcière bien-aimée (2/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste suisse romande et essayiste, auteure de plusieurs ouvrages sur le féminisme et la critique des systèmes de domination. Son livre Sorcière, la puissance invaincue des femmes (2018) est devenu un phénomène de librairie vendu à 380 000 exemplaires en 15 langues, explorant les chasses aux sorcières du XVe au XVIIe siècle comme crime de masse misogyne.",
+    "question": {
+      "question": "Comment l'écriture peut-elle donner du courage à quelqu'un qui se définit comme une 'poule mouillée' et une 'aimable bourgeoise bien élevée' ?",
+      "reponse_brute": "Chollet articule que l'écriture lui permet de donner du courage à ses convictions. Elle se définit comme quelqu'un qui s'embarrasse de se faire remarquer mais qui sort du rang quand ses convictions l'y obligent. L'acte d'écrire devient lui-même une forme de sorcellerie, d'affirmation personnelle et collective. Son parcours montre comment l'essai peut être un acte politique pour celle qui n'est pas naturellement activiste.",
+      "citation": "Je suis une aimable bourgeoise bien élevée et cela m'embarrasse de me faire remarquer. Je sors du rang quand je ne peux pas faire autrement, quand mes convictions et aspirations m'y obligent. J'écris pour me donner du courage."
+    },
+    "slug": "comment-lecriture-peut-elle-donner-du-courage-a-quelquun-qui-se-definit-comme-un"
+  },
+  {
+    "episode_title": "Mona Chollet : notre sorcière bien-aimée (2/3)",
+    "guest_name": "Mona Chollet",
+    "bio_courte": "Journaliste suisse romande et essayiste, auteure de plusieurs ouvrages sur le féminisme et la critique des systèmes de domination. Son livre Sorcière, la puissance invaincue des femmes (2018) est devenu un phénomène de librairie vendu à 380 000 exemplaires en 15 langues, explorant les chasses aux sorcières du XVe au XVIIe siècle comme crime de masse misogyne.",
+    "question": {
+      "question": "Le succès phénoménal de 'Sorcière' change-t-il quelque chose à la façon d'écrire pour celui qui l'a écrit ?",
+      "reponse_brute": "Chollet explique que le contrat pour Sorcière a été signé début 2017, et que l'explosion du mouvement MeToo pendant l'écriture a décuplé ses forces et son envie d'en découdre. Le succès du livre (380 000 exemplaires) en a fait un phénomène de librairie, mais elle reste consciente des limites de sa portée et des critiques d'instrumentalisation du terme 'puissance'. Elle maintient une certaine humilité sur l'impact réel des mots.",
+      "citation": "J'ai proposé ce projet le contrat on l'a signé début 2017 pendant que j'écrivais tout d'un coup MeToo a éclaté et je passais autant de temps à suivre les prises de parole sur cet énorme surgissement, cet énorme événement ça a décuplé mes forces encore et mon envie d'en découdre."
+    },
+    "slug": "le-succes-phenomenal-de-sorciere-change-t-il-quelque-chose-a-la-facon-decrire-po"
+  }
+]
