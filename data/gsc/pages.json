@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 37,
-    "impressions": 131,
-    "ctr": 0.2824,
-    "position": 11.9
+    "clics": 39,
+    "impressions": 132,
+    "ctr": 0.2955,
+    "position": 11.5
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -16,9 +16,9 @@
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
     "clics": 3,
-    "impressions": 22,
-    "ctr": 0.1364,
-    "position": 4.7
+    "impressions": 24,
+    "ctr": 0.125,
+    "position": 4.4
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/combien-dheures-par-jour-faut-il-ecrire-pour-etre-productif-en-tant-que-romancie.html",
@@ -170,36 +170,36 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 31,
+    "impressions": 33,
     "ctr": 0,
-    "position": 1.8
+    "position": 1.7
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 38,
+    "impressions": 40,
     "ctr": 0,
-    "position": 6.1
+    "position": 5.8
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 15,
+    "impressions": 17,
     "ctr": 0,
-    "position": 1.8
+    "position": 1.7
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 21,
+    "impressions": 23,
     "ctr": 0,
-    "position": 3.0
+    "position": 2.8
   },
   {
     "url": "https://www.audiobooklab.fr/terms-and-conditions/",
     "clics": 0,
-    "impressions": 13,
+    "impressions": 15,
     "ctr": 0,
-    "position": 3.2
+    "position": 2.9
   }
 ]
