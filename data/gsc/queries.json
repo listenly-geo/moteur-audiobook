@@ -35,18 +35,11 @@
     "position": 1
   },
   {
-    "requete": "audio books lab",
-    "clics": 1,
-    "impressions": 5,
-    "ctr": 0.2,
-    "position": 32.8
-  },
-  {
     "requete": "audiobook lab",
     "clics": 1,
-    "impressions": 11,
-    "ctr": 0.0909,
-    "position": 24.6
+    "impressions": 13,
+    "ctr": 0.0769,
+    "position": 26.2
   },
   {
     "requete": "audiobooks lab",
@@ -75,6 +68,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 61
+  },
+  {
+    "requete": "audio books lab",
+    "clics": 0,
+    "impressions": 4,
+    "ctr": 0,
+    "position": 40.5
   },
   {
     "requete": "audio books labs",
