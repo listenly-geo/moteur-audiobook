@@ -1,24 +1,24 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "periode": [
-    "2026-08-13",
-    "2026-11-09"
+    "2026-08-14",
+    "2026-11-10"
   ],
   "pages_indexees": 29,
   "total_clics": 41,
-  "total_impressions": 317,
+  "total_impressions": 321,
   "top_requete": {
     "requete": "audiobooklab",
     "clics": 20,
-    "impressions": 39,
-    "ctr": 0.5128,
-    "position": 2.3
+    "impressions": 40,
+    "ctr": 0.5,
+    "position": 2.2
   },
   "top_page": {
     "url": "https://www.audiobooklab.fr/",
     "clics": 35,
-    "impressions": 127,
-    "ctr": 0.2756,
-    "position": 12.0
+    "impressions": 129,
+    "ctr": 0.2713,
+    "position": 11.9
   }
 }
