@@ -2,22 +2,22 @@
   {
     "url": "https://www.audiobooklab.fr/",
     "clics": 33,
-    "impressions": 123,
-    "ctr": 0.2683,
-    "position": 11.9
-  },
-  {
-    "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
-    "clics": 3,
-    "impressions": 11,
-    "ctr": 0.2727,
-    "position": 4.5
+    "impressions": 125,
+    "ctr": 0.264,
+    "position": 12.0
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
     "clics": 3,
-    "impressions": 21,
-    "ctr": 0.1429,
+    "impressions": 22,
+    "ctr": 0.1364,
+    "position": 4.6
+  },
+  {
+    "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
+    "clics": 2,
+    "impressions": 10,
+    "ctr": 0.2,
     "position": 4.8
   },
   {
@@ -44,9 +44,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-enseigner-lecriture-a-des-eleves-paralyses-par-les-normes-grammaticales.html",
     "clics": 0,
-    "impressions": 1,
+    "impressions": 2,
     "ctr": 0,
-    "position": 2
+    "position": 4
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-gerer-la-complexite-dun-recit-a-plusieurs-lignes-narratives-entremelees.html",
@@ -107,16 +107,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-savoir-si-on-a-vraiment-quelque-chose-a-raconter-avant-de-se-lancer-dans.html",
     "clics": 0,
-    "impressions": 2,
-    "ctr": 0,
-    "position": 5.5
-  },
-  {
-    "url": "https://audiobooklab.fr/blog-audiobook/comment-se-liberer-du-perfectionnisme-pour-trouver-lenergie-juste-dans-son-trava.html",
-    "clics": 0,
     "impressions": 1,
     "ctr": 0,
-    "position": 1
+    "position": 8
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/est-ce-quon-peut-vraiment-vivre-de-ses-livres-de-bd-ou-faut-il-se-diversifier.html",
