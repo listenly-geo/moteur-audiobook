@@ -2,16 +2,16 @@
   {
     "url": "https://www.audiobooklab.fr/",
     "clics": 33,
-    "impressions": 125,
-    "ctr": 0.264,
-    "position": 12.0
+    "impressions": 122,
+    "ctr": 0.2705,
+    "position": 10.7
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
     "clics": 3,
-    "impressions": 22,
-    "ctr": 0.1364,
-    "position": 4.6
+    "impressions": 21,
+    "ctr": 0.1429,
+    "position": 4.8
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -23,9 +23,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/combien-dheures-par-jour-faut-il-ecrire-pour-etre-productif-en-tant-que-romancie.html",
     "clics": 0,
-    "impressions": 7,
+    "impressions": 8,
     "ctr": 0,
-    "position": 7.4
+    "position": 7
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-concilier-lecriture-critique-contrainte-par-les-commandes-et-lecriture-l.html",
@@ -147,6 +147,13 @@
     "position": 9
   },
   {
+    "url": "https://audiobooklab.fr/blog-audiobook/quel-mot-unique-definit-le-mieux-mon-uvre-et-comment-le-justifier.html",
+    "clics": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 1
+  },
+  {
     "url": "https://audiobooklab.fr/blog-audiobook/quel-role-joue-lediteur-dans-la-finalisation-dun-livre-autobiographique-ou-sensi.html",
     "clics": 0,
     "impressions": 1,
@@ -170,29 +177,29 @@
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 34,
+    "impressions": 33,
     "ctr": 0,
-    "position": 6.4
+    "position": 6.5
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 13,
+    "impressions": 12,
     "ctr": 0,
-    "position": 1.9
+    "position": 2
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 21,
+    "impressions": 20,
     "ctr": 0,
     "position": 3.0
   },
   {
     "url": "https://www.audiobooklab.fr/terms-and-conditions/",
     "clics": 0,
-    "impressions": 11,
+    "impressions": 10,
     "ctr": 0,
-    "position": 2.8
+    "position": 3
   }
 ]
