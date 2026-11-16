@@ -1,9 +1,9 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 33,
+    "clics": 32,
     "impressions": 122,
-    "ctr": 0.2705,
+    "ctr": 0.2623,
     "position": 10.7
   },
   {
@@ -170,7 +170,7 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 34,
+    "impressions": 35,
     "ctr": 0,
     "position": 1.7
   },
@@ -191,9 +191,9 @@
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 20,
+    "impressions": 19,
     "ctr": 0,
-    "position": 3.0
+    "position": 3.2
   },
   {
     "url": "https://www.audiobooklab.fr/terms-and-conditions/",
