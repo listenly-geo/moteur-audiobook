@@ -2,9 +2,9 @@
   {
     "requete": "audiobooklab",
     "clics": 17,
-    "impressions": 35,
-    "ctr": 0.4857,
-    "position": 2.4
+    "impressions": 41,
+    "ctr": 0.4146,
+    "position": 2.3
   },
   {
     "requete": "audiobooklabs",
@@ -16,9 +16,9 @@
   {
     "requete": "audio book labs",
     "clics": 2,
-    "impressions": 5,
-    "ctr": 0.4,
-    "position": 18.4
+    "impressions": 4,
+    "ctr": 0.5,
+    "position": 21.5
   },
   {
     "requete": "alexis robino",
@@ -124,5 +124,12 @@
     "impressions": 1,
     "ctr": 0,
     "position": 79
+  },
+  {
+    "requete": "murielle joudet",
+    "clics": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 54
   }
 ]
