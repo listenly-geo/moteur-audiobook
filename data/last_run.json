@@ -1,13 +1,20 @@
 {
-  "date": "2026-11-17T18:29:11.233972",
+  "date": "2026-11-18T19:14:15.274988",
   "sitemap": 204,
   "pages": [
     {
-      "titre": "Comment le succès de 'Sorcière' a-t-il changé votre écriture?",
-      "titre_original": "Le succès phénoménal de 'Sorcière' change-t-il quelque chose à la façon d'écrire pour celui qui l'a écrit ?",
+      "titre": "Comment rester productif comme éditeur indépendant en vieillissant?",
+      "titre_original": "Comment continuer à travailler intensément en tant qu'éditeur indépendant quand on vieillit, sans sacrifier sa santé et celle de son équipe ?",
       "score": 6.5,
-      "url": "https://audiobooklab.fr/blog-audiobook/le-succes-phenomenal-de-sorciere-change-t-il-quelque-chose-a-la-facon-decrire-po.html",
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-continuer-a-travailler-intensement-en-tant-quediteur-independant-quand-o.html",
       "google": "Google ne reconnaît pas cette URL"
+    },
+    {
+      "titre": "Comment un mentor peut-il légitimer les lectures méprisées?",
+      "titre_original": "Comment un mentor peut-il légitimer les lectures qu'on nous a dit de mépriser et redéfinir notre formation d'éditeur ?",
+      "score": 6.5,
+      "url": "https://audiobooklab.fr/blog-audiobook/comment-un-mentor-peut-il-legitimer-les-lectures-quon-nous-a-dit-de-mepriser-et.html",
+      "google": "Détectée, actuellement non indexée"
     }
   ]
 }
