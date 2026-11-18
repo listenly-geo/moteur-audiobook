@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 32,
-    "impressions": 125,
-    "ctr": 0.256,
-    "position": 10.5
+    "clics": 30,
+    "impressions": 126,
+    "ctr": 0.2381,
+    "position": 11.2
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -18,7 +18,7 @@
     "clics": 2,
     "impressions": 10,
     "ctr": 0.2,
-    "position": 4.8
+    "position": 5.1
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-le-travail-editorial-peut-il-sauver-un-manuscript-et-pourquoi-est-ce-dou.html",
@@ -30,9 +30,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/combien-dheures-par-jour-faut-il-ecrire-pour-etre-productif-en-tant-que-romancie.html",
     "clics": 0,
-    "impressions": 8,
+    "impressions": 9,
     "ctr": 0,
-    "position": 7
+    "position": 7.3
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-concilier-lecriture-critique-contrainte-par-les-commandes-et-lecriture-l.html",
@@ -126,13 +126,6 @@
     "position": 8
   },
   {
-    "url": "https://audiobooklab.fr/blog-audiobook/est-ce-quon-peut-vraiment-vivre-de-ses-livres-de-bd-ou-faut-il-se-diversifier.html",
-    "clics": 0,
-    "impressions": 1,
-    "ctr": 0,
-    "position": 11
-  },
-  {
     "url": "https://audiobooklab.fr/blog-audiobook/faut-il-sacrifier-lintegrite-stylistique-dun-recit-brut-pour-des-raisons-juridiq.html",
     "clics": 0,
     "impressions": 1,
@@ -184,23 +177,23 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 38,
+    "impressions": 36,
     "ctr": 0,
     "position": 1.8
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 36,
+    "impressions": 33,
     "ctr": 0,
-    "position": 6.4
+    "position": 6.6
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 16,
+    "impressions": 18,
     "ctr": 0,
-    "position": 2
+    "position": 2.1
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
