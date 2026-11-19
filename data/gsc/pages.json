@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 30,
-    "impressions": 126,
-    "ctr": 0.2381,
-    "position": 11.2
+    "clics": 28,
+    "impressions": 124,
+    "ctr": 0.2258,
+    "position": 11.4
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -30,9 +30,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/combien-dheures-par-jour-faut-il-ecrire-pour-etre-productif-en-tant-que-romancie.html",
     "clics": 0,
-    "impressions": 9,
+    "impressions": 10,
     "ctr": 0,
-    "position": 7.3
+    "position": 7
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-concilier-lecriture-critique-contrainte-par-les-commandes-et-lecriture-l.html",
@@ -177,21 +177,21 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 36,
+    "impressions": 34,
     "ctr": 0,
-    "position": 1.8
+    "position": 1.9
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 33,
+    "impressions": 31,
     "ctr": 0,
-    "position": 6.6
+    "position": 7.0
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 18,
+    "impressions": 19,
     "ctr": 0,
     "position": 2.1
   },
