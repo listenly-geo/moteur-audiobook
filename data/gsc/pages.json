@@ -2,9 +2,9 @@
   {
     "url": "https://www.audiobooklab.fr/",
     "clics": 28,
-    "impressions": 124,
-    "ctr": 0.2258,
-    "position": 11.4
+    "impressions": 129,
+    "ctr": 0.2171,
+    "position": 11.8
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -33,6 +33,13 @@
     "impressions": 10,
     "ctr": 0,
     "position": 7
+  },
+  {
+    "url": "https://audiobooklab.fr/blog-audiobook/comment-concilier-lambition-decrire-de-la-fiction-et-la-necessite-intellectuelle.html",
+    "clics": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 9
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-concilier-lecriture-critique-contrainte-par-les-commandes-et-lecriture-l.html",
@@ -191,9 +198,9 @@
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 19,
+    "impressions": 20,
     "ctr": 0,
-    "position": 2.1
+    "position": 2.3
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
