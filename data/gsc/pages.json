@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 28,
-    "impressions": 132,
-    "ctr": 0.2121,
-    "position": 11.6
+    "clics": 27,
+    "impressions": 131,
+    "ctr": 0.2061,
+    "position": 11.7
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -198,7 +198,7 @@
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 20,
+    "impressions": 21,
     "ctr": 0,
     "position": 2.3
   },
