@@ -1,17 +1,17 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 27,
-    "impressions": 131,
-    "ctr": 0.2061,
-    "position": 11.7
+    "clics": 28,
+    "impressions": 129,
+    "ctr": 0.2171,
+    "position": 11.9
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
     "clics": 3,
-    "impressions": 22,
-    "ctr": 0.1364,
-    "position": 4.6
+    "impressions": 23,
+    "ctr": 0.1304,
+    "position": 4.5
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -133,6 +133,13 @@
     "position": 8
   },
   {
+    "url": "https://audiobooklab.fr/blog-audiobook/faut-il-publier-ses-paroles-de-chanson-ou-les-laisser-purement-orales-et-musical.html",
+    "clics": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 10
+  },
+  {
     "url": "https://audiobooklab.fr/blog-audiobook/faut-il-sacrifier-lintegrite-stylistique-dun-recit-brut-pour-des-raisons-juridiq.html",
     "clics": 0,
     "impressions": 1,
@@ -184,28 +191,28 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 34,
+    "impressions": 35,
     "ctr": 0,
     "position": 1.9
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 31,
+    "impressions": 32,
     "ctr": 0,
-    "position": 7.0
+    "position": 6.8
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 21,
+    "impressions": 22,
     "ctr": 0,
-    "position": 2.3
+    "position": 2.2
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 20,
+    "impressions": 21,
     "ctr": 0,
     "position": 3.0
   },
