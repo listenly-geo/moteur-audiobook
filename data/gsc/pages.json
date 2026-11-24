@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 28,
-    "impressions": 129,
-    "ctr": 0.2171,
-    "position": 11.9
+    "clics": 29,
+    "impressions": 127,
+    "ctr": 0.2283,
+    "position": 12.0
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -16,9 +16,9 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
     "clics": 2,
-    "impressions": 10,
-    "ctr": 0.2,
-    "position": 5.1
+    "impressions": 8,
+    "ctr": 0.25,
+    "position": 4.6
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-le-travail-editorial-peut-il-sauver-un-manuscript-et-pourquoi-est-ce-dou.html",
@@ -191,36 +191,36 @@
   {
     "url": "https://www.audiobooklab.fr/auteurs/",
     "clics": 0,
-    "impressions": 35,
+    "impressions": 34,
     "ctr": 0,
     "position": 1.9
   },
   {
     "url": "https://www.audiobooklab.fr/catalogue/",
     "clics": 0,
-    "impressions": 32,
+    "impressions": 31,
     "ctr": 0,
-    "position": 6.8
+    "position": 7.0
   },
   {
     "url": "https://www.audiobooklab.fr/contact/",
     "clics": 0,
-    "impressions": 22,
+    "impressions": 21,
     "ctr": 0,
-    "position": 2.2
+    "position": 2.3
   },
   {
     "url": "https://www.audiobooklab.fr/privacy-policy/",
     "clics": 0,
-    "impressions": 21,
+    "impressions": 20,
     "ctr": 0,
     "position": 3.0
   },
   {
     "url": "https://www.audiobooklab.fr/terms-and-conditions/",
     "clics": 0,
-    "impressions": 11,
+    "impressions": 10,
     "ctr": 0,
-    "position": 2.8
+    "position": 3
   }
 ]
