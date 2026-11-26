@@ -9,9 +9,9 @@
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
     "clics": 3,
-    "impressions": 23,
-    "ctr": 0.1304,
-    "position": 4.5
+    "impressions": 24,
+    "ctr": 0.125,
+    "position": 4.3
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/quelles-sont-les-regles-decriture-concretes-pour-epurer-un-texte-et-gagner-en-cl.html",
@@ -114,16 +114,16 @@
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-organiser-son-rythme-de-travail-quotidien-quand-on-est-auteur-ou-createu.html",
     "clics": 0,
-    "impressions": 2,
+    "impressions": 1,
     "ctr": 0,
-    "position": 8
+    "position": 5
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-preparer-un-entretien-litteraire-en-profondeur-sans-se-noyer-dans-la-doc.html",
     "clics": 0,
-    "impressions": 4,
+    "impressions": 3,
     "ctr": 0,
-    "position": 4.5
+    "position": 4
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/comment-produire-du-sens-sans-ecrire-des-paroles-au-sens-traditionnel-du-terme.html",
@@ -159,6 +159,13 @@
     "impressions": 1,
     "ctr": 0,
     "position": 5
+  },
+  {
+    "url": "https://audiobooklab.fr/blog-audiobook/le-succes-phenomenal-de-sorciere-change-t-il-quelque-chose-a-la-facon-decrire-po.html",
+    "clics": 0,
+    "impressions": 1,
+    "ctr": 0,
+    "position": 9
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/pourquoi-choisir-un-pseudonyme-et-comment-decider-lequel.html",
