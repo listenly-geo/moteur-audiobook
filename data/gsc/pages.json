@@ -1,10 +1,10 @@
 [
   {
     "url": "https://www.audiobooklab.fr/",
-    "clics": 29,
+    "clics": 30,
     "impressions": 128,
-    "ctr": 0.2266,
-    "position": 11.8
+    "ctr": 0.2344,
+    "position": 11.3
   },
   {
     "url": "https://www.audiobooklab.fr/mentions-legales/",
@@ -33,6 +33,13 @@
     "impressions": 2,
     "ctr": 0.5,
     "position": 7
+  },
+  {
+    "url": "https://audiobooklab.fr/blog-audiobook/que-faire-quand-un-manuscrit-avance-ne-vous-satisfait-plus-et-que-dautres-projet.html",
+    "clics": 1,
+    "impressions": 1,
+    "ctr": 1,
+    "position": 4
   },
   {
     "url": "https://audiobooklab.fr/blog-audiobook/combien-dheures-par-jour-faut-il-ecrire-pour-etre-productif-en-tant-que-romancie.html",
